@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Class</title>
-	<link rel="icon" sizes="64x64" href="favicon.png">
+    <title>Python Class | Dashboard</title>
+    <link rel="icon" sizes="64x64" href="favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -31,11 +31,7 @@
             line-height: 1.6;
         }
 
-		ul {
-    		list-style-type: none; /* Elimina las viñetas */
-    		padding-left: 0; /* Opcional: elimina el padding por defecto */
-  		}
-
+        ul { list-style-type: none; padding-left: 0; }
         .mono { font-family: 'Fira Code', monospace; }
 
         /* --- BOTÓN FLOTANTE JUPYTER --- */
@@ -57,11 +53,7 @@
             gap: 10px;
             transition: transform 0.3s, filter 0.3s;
         }
-
-        .floating-jupyter:hover {
-            transform: scale(1.05);
-            filter: brightness(1.1);
-        }
+        .floating-jupyter:hover { transform: scale(1.05); filter: brightness(1.1); }
 
         /* --- CONTENEDOR PRINCIPAL --- */
         .app-container { max-width: 1100px; margin: 0 auto; padding: 20px; }
@@ -74,7 +66,6 @@
             padding: 30px;
             margin-bottom: 30px;
         }
-
         .hero-text h1 { font-family: 'Fira Code'; color: var(--main-accent); margin-bottom: 10px; }
 
         .tabs-wrapper { margin-top: 20px; }
@@ -95,85 +86,48 @@
             border-top: 2px solid var(--main-accent);
         }
 
-        .tab-content {
-            border: 1px solid var(--border);
-            padding: 20px;
-            border-radius: 0 8px 8px 8px;
-            display: none;
-        }
+        .tab-content { border: 1px solid var(--border); padding: 20px; border-radius: 0 8px 8px 8px; display: none; }
         .tab-content.active { display: block; }
 
-        .class-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
+        .class-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
         .class-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px;
+            padding: 20px; display: flex; flex-direction: column; justify-content: space-between;
         }
 
         .btn-action {
-            display: block;
-            text-align: center;
-            padding: 10px;
-            border-radius: 6px;
-            text-decoration: none;
-            margin-top: 15px;
-            font-weight: bold;
+            display: block; text-align: center; padding: 10px; border-radius: 6px;
+            text-decoration: none; margin-top: 15px; font-weight: bold;
         }
         .btn-main { background: var(--main-accent); color: white; }
         .btn-boost { border: 1px solid var(--boost-accent); color: var(--boost-accent); }
 
-        /* --- CONTENIDO DE LECCIÓN --- */
+        /* --- LECTOR DE LECCIONES --- */
         #lesson-reader {
-            display: none;
-            background: var(--bg-deep);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 40px;
-            margin-top: 20px;
-            animation: fadeIn 0.3s ease;
+            display: none; background: var(--bg-deep); border: 1px solid var(--border);
+            border-radius: 12px; padding: 40px; margin-top: 20px; animation: fadeIn 0.3s ease;
         }
-
         .lesson-header { border-bottom: 1px solid var(--border); margin-bottom: 30px; padding-bottom: 20px; }
         .lesson-header h2 { color: var(--main-accent); font-size: 2rem; }
         .section-title { color: var(--terminal-green); margin: 25px 0 15px; font-family: 'Fira Code'; }
         
         .code-block {
-            background: var(--code-bg);
-            padding: 15px;
-            border-left: 4px solid var(--main-accent);
-            border-radius: 4px;
-            margin: 15px 0;
-            overflow-x: auto;
+            background: var(--code-bg); padding: 15px; border-left: 4px solid var(--main-accent);
+            border-radius: 4px; margin: 15px 0; overflow-x: auto;
         }
-
         .alert-box {
-            background: rgba(210, 153, 34, 0.1);
-            border: 1px solid var(--warning);
-            padding: 15px;
-            border-radius: 6px;
-            margin: 20px 0;
+            background: rgba(210, 153, 34, 0.1); border: 1px solid var(--warning);
+            padding: 15px; border-radius: 6px; margin: 20px 0;
         }
-
         table { width: 100%; border-collapse: collapse; margin: 20px 0; }
         th, td { border: 1px solid var(--border); padding: 12px; text-align: left; }
         th { background: var(--bg-card); color: var(--main-accent); }
-
         .btn-back { background: none; border: 1px solid var(--text-muted); color: var(--text-muted); padding: 5px 15px; cursor: pointer; border-radius: 4px; margin-bottom: 20px; }
 
         @media (max-width: 768px) {
             .floating-jupyter { bottom: 20px; right: 20px; padding: 12px 18px; font-size: 0.8rem; }
             #lesson-reader { padding: 20px; }
         }
-
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
@@ -188,7 +142,7 @@
             <p class="mono" style="color: var(--terminal-green)">> session_start(python_basics)</p>
             <h1>Hola, Desarrollador 👋</h1>
             <p>Bienvenido a tu panel de clases. Tienes 11 clases principales y 11 clases de refuerzo disponibles.</p><br>
-			<span style="color: #d2a8ff"><strong>☛ Instructor and developer: </strong></span><span style="color: #a5d6ff">José Hernández</span><br>
+            <span style="color: #d2a8ff"><strong>☛ Instructor and developer: </strong></span><span style="color: #a5d6ff">José Hernández</span>
         </header>
 
         <div class="tabs-wrapper">
@@ -202,10 +156,18 @@
                     <div class="class-card">
                         <div>
                             <span class="mono" style="color:var(--main-accent); font-size:0.8rem">CLASE 01</span>
-                            <h3>Mi Primer Viaje al Código</h3>
+                            <h3>Mi primer viaje al código</h3>
                             <p>Introducción a la lógica de programación y primer script en Python.</p>
                         </div>
-                        <a href="javascript:void(0)" class="btn-action btn-main" onclick="showLesson()">Ver Contenido</a>
+                        <a href="javascript:void(0)" class="btn-action btn-main" onclick="loadLesson(1)">Ver contenido</a>
+                    </div>
+                    <div class="class-card">
+                        <div>
+                            <span class="mono" style="color:var(--main-accent); font-size:0.8rem">CLASE 02</span>
+                            <h3>El cerebro de la computadora</h3>
+                            <p>Operadores matemáticos, lógica de comparación e interacción con el usuario.</p>
+                        </div>
+                        <a href="javascript:void(0)" class="btn-action btn-main" onclick="loadLesson(2)">Ver contenido</a>
                     </div>
                 </div>
             </div>
@@ -218,10 +180,15 @@
 
     <div class="app-container" id="lesson-reader">
         <button class="btn-back" onclick="hideLesson()">← Volver al Dashboard</button>
-        
-        <div class="lesson-header">
+        <div id="lesson-content"></div>
+    </div>
+
+    <script>
+        const lessons = {
+            1: `
+                <div class="lesson-header">
             <p class="mono">> status: reading_module_01</p>
-            <h2>🚀 Clase: Mi Primer Viaje al Código con Python</h2>
+            <h2>🚀 Clase: Mi primer viaje al código con Python</h2>
             <p><strong>Objetivo:</strong> Que el estudiante comprenda la lógica detrás de la programación y logre escribir su primer script funcional.</p>
         </div>
 
@@ -302,9 +269,92 @@
         <div class="alert-box" style="border-color: var(--main-accent)">
             <strong>💡 Consejos:</strong> Error de novato: Python es sensible a mayúsculas. <code>Print()</code> no es lo mismo que <code>print()</code>.
         </div>
-    </div>
+            `,
+            2: `
+                <div class="lesson-header">
+                    <p class="mono">> status: reading_class_02</p>
+                    <h2>🛠️ Clase: El cerebro de la computadora (operadores e interacción)</h2>
+                    <p><strong>Objetivo:</strong> Aprender a pedir datos al usuario, transformarlos y usar la lógica para comparar resultados.</p>
+                </div>
 
-    <script>
+                <h3 class="section-title">1. El gran problema de la clase anterior</h3>
+                <p>"Hasta ahora, nuestros programas son aburridos porque nosotros escribimos todo el código. ¿Qué pasa si queremos que el usuario nos diga su nombre o su edad?"</p><br>
+				<p>🟣 Hoy aprenderemos a hacer programas <span style="color: #a5d6ff"><strong>interactivos</strong></span>.</p>
+
+                <h3 class="section-title">2. La función input() y el "Muro de los tipos"</h3>
+                <strong><span style="color: #d2a8ff">print() </span></strong>permite que el usuario escriba algo en la consola.</p>
+                <div class="alert-box">
+                    ⚠️ <strong>El gran secreto:</strong> Todo lo que entra por <strong>input()</strong> llega como <strong>Texto (String)</strong>.
+                </div>
+                <p><strong>La conversión de tipos (casting): </strong>Si queremos hacer cálculos, debemos transformar ese texto en números.<br><br>
+				<p>🟣 Usa <span style="color: #d2a8ff">int()</span>  ➼ Para covertir a enteros.</p>
+				<p>🟣 Usa <span style="color: #d2a8ff">float()</span> ➼ Para covertir a decimales.</p>
+                <div class="code-block mono">
+                    edad_texto = <span style="color: #d2a8ff">input</span>(<span style="color: #a5d6ff">"¿Cuántos años tienes? "</span>)<br>
+                    edad_numero = <span style="color: #d2a8ff">int</span>(edad_texto)<br>
+                    <span style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"En 2030 tendrás:"</span>, edad_numero + <span style="color: #79c0ff">4</span>)
+                </div>
+
+				<div class="code-block mono">
+                    edad = <span style="color: #d2a8ff">int<span>(</span>input</span>(<span style="color: #a5d6ff">"¿Cuántos años tienes? "</span>))<br>
+                    <span style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"En 2030 tendrás:"</span>, edad + <span style="color: #79c0ff">4</span>)
+                </div>
+
+                <h3 class="section-title">3. Operadores aritméticos</h3>
+				<p>Operadores indispensables para realizar cálculos matemáticos.
+                <table>
+                    <thead><tr><th>Operación</th><th>Operador</th><th>Ejemplo</th></tr></thead>
+                    <tbody>
+						<tr><td>Suma / Resta</td><td>+ , -</td><td>10 + 5</td></tr>
+                        <tr><td>Multiplicación</td><td>*</td><td>3 * 4</td></tr>
+						<tr><td>División</td><td>/</td><td>10 / 3 (da 3.33)</td></tr>
+                        <tr><td>División Entera</td><td>//</td><td>10 // 3 (da 3)</td></tr>
+                        <tr><td>Módulo (Resto)</td><td>%</td><td>10 % 3 (da 1)</td></tr>
+                        <tr><td>Potencia</td><td>**</td><td>2 ** 3 (8)</td></tr>
+                    </tbody>
+                </table>
+
+                <h3 class="section-title">4. Comparación y lógica</h3>
+                <p>Aquí es donde el programa empieza a "pensar". Las comparaciones devuelven <span style="color: #a5d6ff"><strong>True</strong></span> o <span style="color: #a5d6ff"><strong>False</strong></span>.</p><br>
+				<p><strong>Operadores de comparación</strong><br><br> 
+                <ul>
+                    <li><span style="color: #34BF00">==</span> (Igual a) — ¡Ojo! Doble signo de igual</li>
+					<li><span style="color: #34BF00">!=</span> (Diferente de)</li>
+					<li><span style="color: #34BF00">> , <</span> (Mayor y menor)</li>
+					<li><span style="color: #34BF00">>= , <=</span> (Mayor o igual / Menor o igual)</li>  
+                </ul>
+				<br>
+				<p><strong>Operadores lógicos (<span style="color: #34BF00">and, or, not</span>)</strong> 
+				<p> Úsalos para combinar condiciones (como en los requisitos de un videojuego):<br><br>
+                <ul>
+                    <li><span style="color: #34BF00"><strong>AND:</strong></span> Ambas deben ser ciertas. (Ej: Tener nivel 10 Y tener la llave dorada).
+</li>
+					<li><span style="color: #34BF00"><strong>OR:</strong></span> Al menos una debe ser cierta. (Ej: Tener dinero O tener un cupón de descuento).</li>
+					<li><span style="color: #34BF00"><strong>NOT:</strong></span> Invierte el resultado. (Ej: NO estar muerto).</li>
+                </ul>
+
+                <h3 class="section-title">5. Desafío final: El validador de montaña rusa</h3>
+				<p> Escribir un programa que decida si alguien puede subir a una atracción extrema.<br><br>
+				<p><strong>Requisitos para subir: </strong><br>
+				<p> 1. Tener más de 12 años.
+				<p> 2. Medir más de 1.50 metros.
+				
+                <div class="code-block mono">
+					<span style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"--- BIENVENIDO A LA MONTAÑA RUSA ---"</span>)<br>
+					edad = <span style="color: #d2a8ff">int<span>(</span>input</span>(<span style="color: #a5d6ff">"¿Cuántos años tienes?"</span>))<br>
+					estatura = <span style="color: #d2a8ff">float<span>(</span>input</span>(<span style="color: #a5d6ff">"¿Qué estatura tienes?"</span>))<br>
+                    subir = edad > <span style="color: #79c0ff">12</span> <span style="color: #ff7b72">and</span> estatura > <span style="color: #79c0ff">1.50</span><br>
+                    <span style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"¿Puedes subir?:"</span>, subir)
+                </div>
+				<br>
+				<p><strong>📝 Resumen:</strong><br><br> 
+				<p> • input() siempre devuelve un str.
+				<p> • Usa int() o float() para operar matemáticamente.
+				<p> • == es para comparar, = es para guardar en variables.
+				<p> • and pide que todo se cumpla; or es más flexible.
+            `
+        };
+
         function openTab(evt, tabName) {
             const contents = document.getElementsByClassName("tab-content");
             for (let content of contents) content.classList.remove("active");
@@ -314,7 +364,8 @@
             evt.currentTarget.classList.add("active");
         }
 
-        function showLesson() {
+        function loadLesson(id) {
+            document.getElementById('lesson-content').innerHTML = lessons[id];
             document.getElementById('main-dashboard').style.display = 'none';
             document.getElementById('lesson-reader').style.display = 'block';
             window.scrollTo(0,0);
@@ -325,15 +376,15 @@
             document.getElementById('lesson-reader').style.display = 'none';
         }
 
-        // Generar resto de clases placeholders
+        // Generar placeholders para el resto
         const gridP = document.getElementById('grid-principales');
-        for(let i=2; i<=11; i++) {
-            gridP.innerHTML += `<div class="class-card"><div><span class="mono" style="color:var(--text-muted); font-size:0.8rem">CLASE ${i.toString().padStart(2,'0')}</span><h3>Próximamente...</h3><p>Contenido de la clase principal ${i}.</p></div><a href="#" class="btn-action btn-main" style="opacity:0.5">Bloqueado</a></div>`;
+        for(let i=3; i<=11; i++) {
+            gridP.innerHTML += `<div class="class-card"><div><span class="mono" style="color:var(--text-muted); font-size:0.8rem">CLASE ${i.toString().padStart(2,'0')}</span><h3>Próximamente</h3><p>Contenido en desarrollo.</p></div><a href="#" class="btn-action btn-main" style="opacity:0.5">Bloqueado</a></div>`;
         }
 
         const gridR = document.getElementById('grid-refuerzo');
         for(let i=1; i<=11; i++) {
-            gridR.innerHTML += `<div class="class-card"><div><span class="mono" style="color:var(--boost-accent); font-size:0.8rem">REFUERZO ${i.toString().padStart(2,'0')}</span><h3>Lab ${i}</h3><p>Práctica de refuerzo.</p></div><a href="#" class="btn-action btn-boost">Iniciar Lab</a></div>`;
+            gridR.innerHTML += `<div class="class-card"><div><span class="mono" style="color:var(--boost-accent); font-size:0.8rem">REFUERZO ${i.toString().padStart(2,'0')}</span><h3>Lab ${i}</h3><p>Práctica intensiva.</p></div><a href="#" class="btn-action btn-boost">Iniciar Lab</a></div>`;
         }
     </script>
 </body>
