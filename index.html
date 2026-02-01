@@ -37,6 +37,8 @@
 
         ul { list-style-type: none; padding-left: 0; }
         .mono { font-family: 'Fira Code', monospace; }
+		.mar {padding-left: 30px}
+		.mar2 {padding-left: 60px}
 
         /* --- BOTÓN FLOTANTE JUPYTER --- */
         .floating-jupyter {
@@ -173,6 +175,14 @@
                         </div>
                         <a href="javascript:void(0)" class="btn-action btn-main" onclick="loadLesson(2)">Ver contenido</a>
                     </div>
+					<div class="class-card">
+                        <div>
+                            <span class="mono" style="color:var(--main-accent); font-size:0.8rem">CLASE 03</span>
+                            <h3>Tomando decisiones con python</h3>
+                            <p>Uso de condicionales if, elif, else y la importancia de la indentación.</p>
+                        </div>
+                        <a href="javascript:void(0)" class="btn-action btn-main" onclick="loadLesson(3)">Ver contenido</a>
+                    </div>
                 </div>
             </div>
 
@@ -183,7 +193,7 @@
     </div>
 
     <div class="app-container" id="lesson-reader">
-        <button class="btn-back" onclick="hideLesson()">← Volver al Dashboard</button>
+        <button class="btn-back" onclick="hideLesson()">← Volver al dashboard</button>
         <div id="lesson-content"></div>
     </div>
 
@@ -286,7 +296,7 @@
 				<p>🟣 Hoy aprenderemos a hacer programas <span style="color: #a5d6ff"><strong>interactivos</strong></span>.</p>
 
                 <h3 class="section-title">2. La función input() y el "Muro de los tipos"</h3>
-                <strong><span style="color: #d2a8ff">print() </span></strong>permite que el usuario escriba algo en la consola.</p>
+                <strong><span style="color: #d2a8ff">input() </span></strong>permite que el usuario escriba algo en la consola.</p>
                 <div class="alert-box">
                     ⚠️ <strong>El gran secreto:</strong> Todo lo que entra por <strong>input()</strong> llega como <strong>Texto (String)</strong>.
                 </div>
@@ -356,6 +366,87 @@
 				<p> • Usa int() o float() para operar matemáticamente.
 				<p> • == es para comparar, = es para guardar en variables.
 				<p> • and pide que todo se cumpla; or es más flexible.
+            `,
+            3: `
+                <div class="lesson-header">
+                    <p class="mono">> status: reading_module_03</p>
+                    <h2>🚦 Clase: Tomando decisiones con python</h2>
+                    <p><strong>Objetivo:</strong> Comprender cómo el programa puede tomar diferentes caminos según las condiciones y aprender la regla de oro de Python: la indentación.</p>
+                </div>
+
+                <h3 class="section-title">1. El concepto: ¿Qué es el flujo de control?</h3>
+                <p>Hasta ahora, el código se lee como una receta (de arriba hacia abajo). Pero la vida real no es así.</p><br>
+                <p><strong>Analogía:</strong> Imagina que vas a salir de casa.</p><br>
+                <ul>
+                    <li>• Si está lloviendo, llevas paraguas.</li>
+                    <li>• Si no (Si) está nublado, llevas una chaqueta.</li>
+                    <li>• De lo contrario, vas en camiseta.</li>
+                </ul>
+
+                <h3 class="section-title">2. La estructura if y else</h3>
+                <p>Es la forma más básica de decisión. Es "blanco o negro".</p>
+                <div class="code-block mono">
+				edad = <span style="color: #d2a8ff">int</span>(<span style="color: #d2a8ff">input</span>(<span style="color: #a5d6ff">"Ingrese la edad: "</span>))<br><br>
+	<span style="color: #ff7b72">if</span> edad >= <span style="color: #79c0ff">18</span>:<br>
+    <span style="color: #d2a8ff" class="mar">print</span>(<span style="color: #a5d6ff">"Puedes entrar al club."</span>)<br>
+<span style="color: #ff7b72">else</span>:<br>
+    <span style="color: #d2a8ff" class="mar">print</span>(<span style="color: #a5d6ff">"Lo siento, eres muy joven."</span>)</div>
+                <p><strong>Puntos clave:</strong> * Los dos puntos : al final de la línea. El else no lleva condición (es el "si todo lo anterior falló").</p>
+
+                <h3 class="section-title">3. La regla de oro: Indentación</h3>
+                <div class="alert-box">
+                    <p>En otros lenguajes se usan llaves { }, pero en Python usamos el espacio.</p><br>
+                    <p><strong>¿Qué es?:</strong> Es el espacio (usualmente 4 espacios o un Tab) al inicio de una línea.</p>
+                    <p><strong>¿Para qué sirve?:</strong> Le dice a Python qué líneas "pertenecen" a la decisión.</p><br>
+                    <p>⚠️ <strong>ERROR COMÚN:</strong> Si no indentas el código dentro de un if, Python te dará un IndentationError y el programa no funcionará.</p>
+                </div>
+
+                <h3 class="section-title">4. El "plan B, C y D": Sentencia elif</h3>
+                <p>¿Qué pasa si hay más de dos opciones? Usamos elif (abreviatura de else if).</p>
+                <div class="code-block mono">nota = <span style="color: #d2a8ff">int</span>(<span style="color: #d2a8ff">input</span>(<span style="color: #a5d6ff">"Ingrese su nota: "</span>))<br><br>
+<span style="color: #ff7b72">if</span> nota >= <span style="color: #79c0ff">18</span>:<br>
+    <span style="color: #d2a8ff" class="mar">print</span>(<span style="color: #a5d6ff">"¡Excelente!"</span>)<br>
+<span style="color: #ff7b72">elif</span> nota >= <span style="color: #79c0ff">14</span>:<br>
+    <span style="color: #d2a8ff" class="mar">print</span>(<span style="color: #a5d6ff">"Muy bien."</span>)<br>
+<span style="color: #ff7b72">elif</span> nota >= <span style="color: #79c0ff">10</span>:<br>
+    <span style="color: #d2a8ff" class="mar">print</span>(<span style="color: #a5d6ff">"Aprobaste."</span>)<br>
+<span style="color: #ff7b72">else</span>:<br>
+    <span style="color: #d2a8ff" class="mar">print</span>(<span style="color: #a5d6ff">"Debes recuperar."</span>)</div>
+                <p><strong>Lógica:</strong> Python revisa de arriba hacia abajo. En cuanto encuentra una que es True, ejecuta ese bloque y se salta el resto.</p>
+
+                <h3 class="section-title">5. Condiciones anidadas: Decisiones dentro de decisiones</h3>
+                <p>A veces, para tomar una decisión, primero debes haber cumplido otra.</p>
+                <div class="code-block mono">
+				cuenta = <span style="color: #d2a8ff">input</span>(<span style="color: #a5d6ff">"Posee una cuenta [ingrese si o no]: "</span>)<br><br>
+<span style="color: #ff7b72">if</span> cuenta == <span style="color: #a5d6ff">"si"</span>:<br>
+<span style="color: #010409">---</span>password = <span style="color: #d2a8ff">int</span>(<span style="color: #d2a8ff">input</span>(<span style="color: #a5d6ff">"Ingrese contraseña: "</span>))<br>
+    <span style="color: #ff7b72" class="mar">if</span> password == <span style="color: #79c0ff">1234</span>:<br>
+        <span style="color: #d2a8ff" class="mar2">print</span>(<span style="color: #a5d6ff">"Bienvenido al juego."</span>)<br>
+    <span style="color: #ff7b72" class="mar">else</span>:<br>
+        <span style="color: #d2a8ff" class="mar2">print</span>(<span style="color: #a5d6ff">"Contraseña incorrecta."</span>)<br>
+<span style="color: #ff7b72">else</span>:<br>
+    <span style="color: #d2a8ff" class="mar">print</span>(<span style="color: #a5d6ff">"Debes registrarte primero."</span>)</div>
+
+                <h3 class="section-title">6. Reto en clase: El oráculo del clima</h3>
+                <p>Escribir un programa que:</p><br>
+                <ul>
+                    <li>1. Pida al usuario la temperatura actual.</li>
+                    <li>2. Si es mayor a 30: imprimir "Hace mucho calor 🥵".</li>
+                    <li>3. Si está entre 20 y 30: imprimir "Clima perfecto 😎".</li>
+                    <li>4. Si está entre 10 y 19: imprimir "Lleva un suéter 🧥".</li>
+                    <li>5. Si es menor a 10: imprimir "¡Te vas a congelar! ❄️".</li>
+                </ul>
+
+                <h3 class="section-title">📝 Resumen para la libreta</h3>
+                <table>
+                    <thead><tr><th>Palabra Clave</th><th>Función</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>if</strong></td><td>La primera condición a evaluar.</td></tr>
+                        <tr><td><strong>elif</strong></td><td>"Si la anterior no se cumplió, prueba esta".</td></tr>
+                        <tr><td><strong>else</strong></td><td>El plan de emergencia si ninguna se cumplió.</td></tr>
+                        <tr><td><strong>Indentación</strong></td><td>Los espacios que definen qué código pertenece a qué bloque.</td></tr>
+                    </tbody>
+                </table>
             `
         };
 
@@ -382,7 +473,7 @@
 
         // Generar placeholders para el resto
         const gridP = document.getElementById('grid-principales');
-        for(let i=3; i<=11; i++) {
+        for(let i=4; i<=11; i++) {
             gridP.innerHTML += `<div class="class-card"><div><span class="mono" style="color:var(--text-muted); font-size:0.8rem">CLASE ${i.toString().padStart(2,'0')}</span><h3>Próximamente</h3><p>Contenido en desarrollo.</p></div><a href="#" class="btn-action btn-main" style="opacity:0.5">Bloqueado</a></div>`;
         }
 
