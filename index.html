@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Class</title>
+    <title>Python Class | Dashboard</title>
     <link rel="icon" sizes="64x64" href="favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
@@ -184,6 +184,14 @@
                         </div>
                         <a href="javascript:void(0)" class="btn-action btn-main" onclick="loadLesson(3)">Ver contenido</a>
                     </div>
+					<div class="class-card">
+                        <div>
+                            <span class="mono" style="color:var(--main-accent); font-size:0.8rem">CLASE 04</span>
+                            <h3>El poder de la repetición</h3>
+                            <p>Aprende a usar bucles for y while para automatizar tareas repetitivas.</p>
+                        </div>
+                        <a href="javascript:void(0)" class="btn-action btn-main" onclick="loadLesson(4)">Ver contenido</a>
+                    </div>
                 </div>
             </div>
 
@@ -202,7 +210,7 @@
         const lessons = {
             1: `
                 <div class="lesson-header">
-            <p class="mono">> status: reading_class_01</p>
+            <p class="mono">> status: reading_module_01</p>
             <h2>🚀 Clase: Mi primer viaje al código con Python</h2>
             <p><strong>Objetivo:</strong> Que el estudiante comprenda la lógica detrás de la programación y logre escribir su primer script funcional.</p>
         </div>
@@ -219,7 +227,7 @@
 		<p><strong>🟣 Está en todos lados:</strong> Versatilidad en múltiples campos (Data Science, IA, Web, Instagram, Netflix y la NASA).<br>
         <p><strong>🟣 Comunidad:</strong> Si tienes un error, alguien ya lo resolvió en internet por su naturaleza de software libre y multiplataforma.<br>
 
-        <h3 class="section-title">3. Preparando el Laboratorio</h3>
+        <h3 class="section-title">3. Preparando el laboratorio</h3>
         <p><strong>Recomendación:</strong> Usar un entorno online nos ahorrará instalar programas y extensiones. Los entornos recomendados son: Replit, Google Colab y Jupyter Notebook.</p>
         <div class="alert-box">
             <strong>Acción:</strong> Utilizaremos Jupyter Notebook. Abre el navegador, entra al sitio web de Jupyter Notebook o haz click en el botón naranja de Jupyter en esta página.
@@ -235,7 +243,7 @@
         </div>
         <p><small>Punto clave: Las comillas "" se usan para texto. Sin comillas, Python busca números o variables. Pueden ser dobles(“”) o simples (‘’)</small></p>
 
-        <h3 class="section-title">5. El Concepto de Variable: La Caja Mágica</h3>
+        <h3 class="section-title">5. El concepto de variable: La caja mágica</h3>
         <div class="alert-box">
             <strong>Reglas de oro:</strong>
             <ul>
@@ -258,7 +266,7 @@
 			<span style="color: #d2a8ff">print</span>(<span>nivel</span>)<br>
         </div>
 
-        <h3 class="section-title">6. Tipos de Datos: ¿Qué hay dentro de la caja?</h3>
+        <h3 class="section-title">6. Tipos de datos: ¿Qué hay dentro de la caja?</h3>
         <table>
             <thead><tr><th>Tipo</th><th>Nombre Técnico</th><th>Ejemplo</th><th>Uso</th></tr></thead>
             <tbody>
@@ -268,7 +276,7 @@
             </tbody>
         </table>
 
-        <h3 class="section-title">7. Desafío Final: El carnet de programador</h3>
+        <h3 class="section-title">7. Desafío final: El carnet de programador</h3>
         <p>Crear un programa que almacene nombre, apellido, año de nacimiento, edad, hobby y que luego muestre esos datos de la siguiente forma:</p>
 		<div class="code-block mono">
 			<span>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span><br>
@@ -287,7 +295,7 @@
             `,
             2: `
                 <div class="lesson-header">
-                    <p class="mono">> status: reading_class_02</p>
+                    <p class="mono">> status: reading_module_02</p>
                     <h2>🛠️ Clase: El cerebro de la computadora (operadores e interacción)</h2>
                     <p><strong>Objetivo:</strong> Aprender a pedir datos al usuario, transformarlos y usar la lógica para comparar resultados.</p>
                 </div>
@@ -370,7 +378,7 @@
             `,
             3: `
                 <div class="lesson-header">
-                    <p class="mono">> status: reading_class_03</p>
+                    <p class="mono">> status: reading_module_03</p>
                     <h2>🚦 Clase: Tomando decisiones con python</h2>
                     <p><strong>Objetivo:</strong> Comprender cómo el programa puede tomar diferentes caminos según las condiciones y aprender la regla de oro de Python: la indentación.</p>
                 </div>
@@ -448,6 +456,78 @@
                         <tr><td><strong>Indentación</strong></td><td>Los espacios que definen qué código pertenece a qué bloque.</td></tr>
                     </tbody>
                 </table>
+            `,
+            4: `
+                <div class="lesson-header">
+                    <p class="mono">> status: reading_module_04</p>
+                    <h2>🔁 Clase: El poder de la repetici[on (bucles en python)</h2>
+                    <p><strong>Objetivo:</strong> Automatizar tareas repetitivas y controlar cuándo un proceso debe detenerse o saltarse pasos.</p>
+                </div>
+
+                <h3 class="section-title">1. ¿Por qué repetir?</h3>
+                <p>"Imagina que tienes que escribir 'No debo hablar en clase' 100 veces en la pizarra. ¿Qué preferirías: hacerlo a mano o tener un robot que lo haga por ti en 1 segundo?"</p>
+                <div class="code-block mono">
+                    <span style="color: #d2a8ff"><strong>Concepto: </strong></span><span style="color: #a5d6ff">En programación, los bucles (loops) nos permiten ejecutar el mismo bloque de código muchas veces sin tener que escribirlo una y otra vez.</span>
+                </div>
+
+                <h3 class="section-title">2. El bucle for: El contador programado</h3>
+                <p>El bucle <strong>for</strong> se usa cuando sabemos cuántas veces queremos hacer algo o queremos recorrer una lista de elementos.</p>
+                <p><strong>A. Con listas</strong></p>
+                <div class="code-block mono">
+                    invitados = [<span style="color: #a5d6ff">"Alex"</span>, <span style="color: #a5d6ff">"Santi"</span>, <span style="color: #a5d6ff">"Vale"</span>]<br>
+                    <span style="color: #ff7b72">for</span> persona <span style="color: #ff7b72">in</span> invitados:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"¡Hola"</span>, persona, <span style="color: #a5d6ff">"! Estás invitado a la fiesta."</span>)
+                </div>
+
+                <p><strong>B. Con la función range()</strong></p>
+                <p><code>range(inicio, fin)</code> genera una secuencia de números. Ojo: Python empieza en 0 y se detiene antes del número final.</p>
+                <div class="code-block mono">
+                    <span style="color: #8b949e"># Imprime del 0 al 4</span><br>
+                    <span style="color: #ff7b72">for</span> i <span style="color: #ff7b72">in</span> <span style="color: #d2a8ff">range</span>(<span style="color: #79c0ff">5</span>):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"Repetición número:"</span>, i)
+                </div>
+
+                <h3 class="section-title">3. El bucle while: Mientras se cumpla la condición</h3>
+                <p>El bucle <strong>while</strong> se usa cuando no sabemos exactamente cuántas veces se repetirá algo, solo que debe seguir "mientras" una condición sea verdadera.</p>
+                <p>Ejemplo: Vida de un personaje en un juego</p>
+                <div class="code-block mono">
+                    vida = <span style="color: #79c0ff">3</span><br>
+                    <span style="color: #ff7b72">while</span> vida > <span style="color: #79c0ff">0</span>:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"Sigues jugando. Vidas restantes:"</span>, vida)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;vida = vida - <span style="color: #79c0ff">1</span>  <span style="color: #8b949e"># ¡Súper importante!</span><br><br>
+                    <span style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"Game Over"</span>)
+                </div>
+                <div class="alert-box">
+                    ⚠️ <strong>Alerta de bucle infinito:</strong> Si olvidas cambiar la condición dentro del while, el programa se quedará corriendo para siempre.
+                </div>
+
+                <h3 class="section-title">4. Control de bucles: break y continue</h3>
+                <p><strong>break:</strong> Detiene el bucle por completo inmediatamente.<br>
+                <strong>continue:</strong> Salta la repetición actual y pasa a la siguiente.</p>
+                <div class="code-block mono">
+                    <span style="color: #ff7b72">for</span> numero <span style="color: #ff7b72">in</span> <span style="color: #d2a8ff">range</span>(<span style="color: #79c0ff">1</span>, <span style="color: #79c0ff">11</span>):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff7b72">if</span> numero == <span style="color: #79c0ff">5</span>:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff7b72">continue</span>  <span style="color: #8b949e"># Salta el número 5</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff7b72">if</span> numero == <span style="color: #79c0ff">8</span>:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff7b72">break</span>     <span style="color: #8b949e"># Se detiene al llegar al 8</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #d2a8ff">print</span>(numero)
+                </div>
+
+                <h3 class="section-title">5. El desafío final: "El contador de cohete"</h3>
+                <p>Escribir un programa que haga una cuenta regresiva del 10 al 1 y al llegar al 1 imprima "¡Despegue! 🚀".</p><br>
+				<strong>Nota:</strong> Debe pedir o guardar el número para poder iniciar el conteo.</p>
+                
+                <h3 class="section-title">📝 Resumen para la pizarra</h3>
+                <table>
+                    <thead><tr><th>Herramienta</th><th>Cuándo usarla</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>for</strong></td><td>Sabes cuántas veces repetir o tienes una lista.</td></tr>
+                        <tr><td><strong>while</strong></td><td>Repetir hasta que algo cambie (ej. el usuario gane).</td></tr>
+                        <tr><td><strong>range()</strong></td><td>Para crear secuencias de números fácilmente.</td></tr>
+                        <tr><td><strong>break</strong></td><td>Salir del bucle por completo.</td></tr>
+                        <tr><td><strong>continue</strong></td><td>Saltar solo la vuelta actual del bucle.</td></tr>
+                    </tbody>
+                </table>
             `
         };
 
@@ -474,7 +554,7 @@
 
         // Generar placeholders para el resto
         const gridP = document.getElementById('grid-principales');
-        for(let i=4; i<=11; i++) {
+        for(let i=5; i<=11; i++) {
             gridP.innerHTML += `<div class="class-card"><div><span class="mono" style="color:var(--text-muted); font-size:0.8rem">CLASE ${i.toString().padStart(2,'0')}</span><h3>Próximamente</h3><p>Contenido en desarrollo.</p></div><a href="#" class="btn-action btn-main" style="opacity:0.5">Bloqueado</a></div>`;
         }
 
