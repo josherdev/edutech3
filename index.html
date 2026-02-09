@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Class | Dashboard</title>
+    <title>Python Class</title>
     <link rel="icon" sizes="64x64" href="favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
@@ -39,27 +39,48 @@
         .mono { font-family: 'Fira Code', monospace; }
 		.mar {padding-left: 30px}
 		.mar2 {padding-left: 60px}
+		.mar3 {padding-left: 90px}
 
         /* --- BOTÓN FLOTANTE JUPYTER --- */
         .floating-jupyter {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background-color: var(--jupyter-orange);
-            color: white;
+            background-color: #FFD000;
+            color: #292828;
             padding: 15px 25px;
             border-radius: 50px;
             text-decoration: none;
             font-family: 'Fira Code', monospace;
             font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
             z-index: 1000;
             display: flex;
             align-items: center;
             gap: 10px;
             transition: transform 0.3s, filter 0.3s;
         }
-        .floating-jupyter:hover { transform: scale(1.05); filter: brightness(1.1); }
+        .floating-jupyter:hover { transform: scale(1.05); }
+
+		/* --- BOTON YOUTUBE --- */
+		.formayt{
+			width: 40px;
+			height: 40px;
+		}
+		
+		.yt {
+			position: fixed;
+            top: 60px;
+            right: 80px;
+			display: flex;
+			text-decoration: none;
+			z-index: 1000;
+			align-items: center;
+			gap: 10px;
+			box-shadow: 0 2px 8px rgba(0,0,0,0); 		
+		}
+
+		.yt:hover { transform: scale(1.05); }
 
         /* --- CONTENEDOR PRINCIPAL --- */
         .app-container { max-width: 1100px; margin: 0 auto; padding: 20px; }
@@ -106,7 +127,7 @@
             text-decoration: none; margin-top: 15px; font-weight: bold;
         }
         .btn-main { background: var(--main-accent); color: white; }
-        .btn-boost { border: 1px solid var(--boost-accent); color: var(--boost-accent); }
+		.btn-boost { color: white ; background: var(--boost-accent);}
 
         /* --- LECTOR DE LECCIONES --- */
         #lesson-reader {
@@ -148,8 +169,8 @@
             <p class="mono" style="color: var(--terminal-green)">> session_start(python_basics)</p>
             <h1>Hola, Desarrollador 👋</h1>
             <p>Bienvenido a tu panel de clases. Tienes 11 clases principales y 11 clases de refuerzo disponibles.</p><br>
-            <strong><span class="mono" style="color: #d2a8ff">if instructor and developer == </span><span class="mono" style="color: #a5d6ff">True</span><br>
-			<strong><span class="mono mar2" style="color: var(--terminal-green)"><strong>print</strong></span>(<span class="mono" style="color: #ff7b72">"☛ José Hernández"</span>)</strong>
+            <strong><span class="mono" style="color: #ff7b72">if</span><span class="mono"> instructor <span class="mono" style="color: #ff7b72">and</span> <span class="mono"> developer <span class="mono" style="color: #ff7b72"></span> <span class="mono" style="color: #a5d6ff"> == </span> <span class="mono" style="color: #ff7b72">True</span><span class="mono">:</span><br>
+			<strong><span class="mono mar" style="color: var(--terminal-green)"><strong>print</strong></span>(<span class="mono" style="color: #a5d6ff">"☛ José Hernández"</span>)</strong>
         </header>
 
         <div class="tabs-wrapper">
@@ -191,6 +212,40 @@
                             <p>Aprende a usar bucles for y while para automatizar tareas repetitivas.</p>
                         </div>
                         <a href="javascript:void(0)" class="btn-action btn-main" onclick="loadLesson(4)">Ver contenido</a>
+                    </div>
+                </div>
+            </div>
+
+			<div id="boost-lessons" class="tab-content">
+                <div class="class-grid" id="grid-refuerzo">
+                    <div class="class-card">
+                        <div>
+                            <span class="mono" style="color:var(--boost-accent); font-size:0.8rem">REFUERZO 01</span>
+                            <h3>Python Express</h3>
+                            <p>Repaso relámpago, perfiles gamer y detección de errores.</p>
+                        </div>
+                        <a href="javascript:void(0)" class="btn-action btn-boost" onclick="loadLesson('R1')">Ver contenido</a>
+                    </div>
+					<div class="class-card">
+						<div><span class="mono" style="color:var(--boost-accent); font-size:0.8rem">REFUERZO 02</span>
+							<h3>Interacción y lógica</h3><p>Dominando input() y operadores lógicos.</p></div>
+						<a href="javascript:void(0)" class="btn-action btn-boost" onclick="loadLesson('R2')">Ver contenido</a>
+                	</div>
+					<div class="class-card">
+					    <div>
+					        <span class="mono" style="color:var(--boost-accent); font-size:0.8rem">REFUERZO 03</span>
+					        <h3>Decisiones y estructura</h3>
+					        <p>Repaso de if, indentación y ejercicios prácticos de lógica.</p>
+					    </div>
+					    <a href="javascript:void(0)" class="btn-action btn-boost" onclick="loadLesson('R3')">Ver contenido</a>
+					</div>
+					<div class="class-card">
+                        <div>
+                            <span class="mono" style="color:var(--boost-accent); font-size:0.8rem">REFUERZO 04</span>
+                            <h3>Domando los bucles</h3>
+                            <p>El mapa mental de los bucles y cuándo usarlos.</p>
+                        </div>
+                        <a href="javascript:void(0)" class="btn-action btn-boost" onclick="loadLesson('R4')">Ver contenido</a>
                     </div>
                 </div>
             </div>
@@ -380,10 +435,13 @@
                 <div class="lesson-header">
                     <p class="mono">> status: reading_module_03</p>
                     <h2>🚦 Clase: Tomando decisiones con python</h2>
+					<a href="#" class="yt" target="_blank">
+						<img class="formayt" src="youtube3.png" title="Video explicativo">
+					</a> 
                     <p><strong>Objetivo:</strong> Comprender cómo el programa puede tomar diferentes caminos según las condiciones y aprender la regla de oro de Python: la indentación.</p>
                 </div>
 
-                <h3 class="section-title">1. El concepto: ¿Qué es el flujo de control?</h3>
+                <h3 class="section-title">1. El concepto: ¿Qué es el flujo de control?</h3> 
                 <p>Hasta ahora, el código se lee como una receta (de arriba hacia abajo). Pero la vida real no es así.</p><br>
                 <p><strong>Analogía:</strong> Imagina que vas a salir de casa.</p><br>
                 <ul>
@@ -435,7 +493,6 @@
         <span style="color: #d2a8ff" class="mar2">print</span>(<span style="color: #a5d6ff">"Contraseña incorrecta."</span>)<br>
 <span style="color: #ff7b72">else</span>:<br>
     <span style="color: #d2a8ff" class="mar">print</span>(<span style="color: #a5d6ff">"Debes registrarte primero."</span>)</div>
-
                 <h3 class="section-title">6. Reto en clase: El oráculo del clima</h3>
                 <p>Escribir un programa que:</p><br>
                 <ul>
@@ -528,6 +585,237 @@
                         <tr><td><strong>continue</strong></td><td>Saltar solo la vuelta actual del bucle.</td></tr>
                     </tbody>
                 </table>
+            `, 
+            'R1': `
+                <div class="lesson-header">
+                    <p class="mono">> status: reading_boost_01</p>
+                    <h2>⚡ Sesión de refuerzo: Python express</h2>
+                </div>
+
+                <h3 class="section-title">1. Repaso relámpago</h3>
+                <p>Antes de los ejercicios, recordamos las "reglas del juego":</p><br>
+                <ul>
+                    <li>➡<strong> print():</strong> Nuestra voz en la consola.</li>
+                    <li>➡<strong> Variables:</strong> Cajas de almacenamiento sin comillas en el nombre.</li>
+                    <li>➡<strong> Tipos:</strong> str ("texto"), int (15), float (10.5).</li>
+                </ul>
+
+                <h3 class="section-title">2. Ejercicio práctico 1: El perfil del gamer</h3>
+                <div class="code-block mono">
+					<span style="color: #8b949e"># 1. Crea las variables</span><br>
+					jugador = <span style="color: #a5d6ff">"DarkKnight99"</span><br>
+					nivel = <span style="color: #79c0ff">15</span><br>
+					puntos_vida = <span style="color: #79c0ff">95.5</span><br><br>
+					<span style="color: #8b949e"># 2. Mostrar información</span><br>
+					<span style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"--- PERFIL DEL JUGADOR ---"</span>)<br>
+					<span style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"Nombre:"</span>, jugador)<br>
+					<span style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"Nivel:"</span>, nivel)<br>
+					<span style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"Puntos de vida:"</span>, puntos_vida)<br>
+                </div>
+
+				<div class="alert-box" style="border-color: var(--main-accent)">
+           	 		<strong>💡 RETO:</strong> Cambiar el valor de nivel sumándole 1 <code>(ej: nivel = 15 + 1)</code> y vean cómo cambia el resultado al ejecutar
+        		</div>
+
+                <h3 class="section-title">3. Ejercicio práctico 2: El detective de errores</h3>
+                <p>Encuentra los 3 errores:</p>
+                <div class="code-block mono" style="border-left-color: var(--warning)">
+nombre_mascota = <span style="color: #a5d6ff">"Firulais</span><br>
+edad = <span style="color: #a5d6ff">"5"</span><br>
+<span style="color: #d2a8ff">print</span>(nombre_mascota + tiene + edad + años)
+                </div>
+
+                <h3 class="section-title">4. Cierre y tarea</h3>
+                <p><strong>Pregunta:</strong> ¿Qué es "10"?</p>
+                <p><strong>Tarea:</strong> Crea la variable mi_cumple e imprímela.</p>
+            `,
+			'R2': `
+                <div class="lesson-header">
+                    <p class="mono">> status: reading_boost_02</p>
+                    <h2>⚡ Sesión de refuerzo: Interacción y lógica en Python</h2>
+                </div>
+
+                <h3 class="section-title">1. El "Flash repaso"</h3>
+                <p>Antes de programar, recordamos la regla de oro del <strong>input()</strong>:</p>
+                <div class="alert-box">
+                    🚨 <strong>IMPORTANTE:</strong> Python es desconfiado. Todo lo que el usuario escribe mediante <code>input()</code>, Python lo guarda como <strong>Texto (String)</strong>. Si quieres hacer matemáticas, tienes que "forzar" el cambio.
+                </div>
+                <ul>
+                    <li>• <code>int(input(...))</code> → Para números enteros (edad, cantidad de personas).</li>
+                    <li>• <code>float(input(...))</code> → Para números con decimales (precios, estaturas).</li>
+                </ul>
+
+                <h3 class="section-title">2. Ejercicio 1: La calculadora de propinas</h3>
+                <p><strong>Objetivo:</strong> Practicar input(), conversión a float y operadores aritméticos.</p><br>
+                <blockquote>"Imagina que eres el programador de una app para restaurantes. Debes pedir el monto de la cuenta, preguntar qué porcentaje de propina quieren dejar y mostrar el total a pagar."</blockquote>
+                
+                <div class="code-block mono">
+<span style="color: #8b949e"># Paso 1: Pedir datos</span><br>
+cuenta = <span style="color: #d2a8ff">float</span>(<span style="color: #d2a8ff">input</span>(<span style="color: #a5d6ff">"¿Cuánto fue el total de la cuenta? "</span>))<br>
+porcentaje = <span style="color: #d2a8ff">float</span>(<span style="color: #d2a8ff">input</span>(<span style="color: #a5d6ff">"¿Qué porcentaje de propina darás (ej. 10, 15)? "</span>))<br><br>
+<span style="color: #8b949e"># Paso 2: Operación matemática</span><br>
+propina = (cuenta * porcentaje) / <span style="color: #79c0ff">100</span><br>
+total_final = cuenta + propina<br><br>
+<span style="color: #8b949e"># Paso 3: Mostrar resultado</span><br>
+<span style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"Monto de la propina: $"</span>, propina)<br>
+<span style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"El total a pagar es: $"</span>, total_final)
+                </div>
+                <p>💡 <strong>Punto de atención:</strong> Asegúrate de que usen <code>/ 100</code> para el porcentaje, es un error matemático común.</p>
+
+                <h3 class="section-title">3. Ejercicio 2: El portero del club "Código VIP"</h3>
+                <p><strong>Objetivo:</strong> Practicar operadores de comparación y lógica (and, or).</p><br>
+                <blockquote>"Para entrar a este club secreto necesitas cumplir dos condiciones: tener 14 años o más Y saber la palabra secreta ('Python123')."</blockquote>
+
+                <div class="code-block mono">
+<span style="color: #8b949e"># Entrada de datos</span><br>
+edad = <span style="color: #d2a8ff">int</span>(<span style="color: #d2a8ff">input</span>(<span style="color: #a5d6ff">"Introduce tu edad: "</span>))<br>
+palabra_secreta = <span style="color: #d2a8ff">input</span>(<span style="color: #a5d6ff">"¿Cuál es la palabra secreta? "</span>)<br><br>
+<span style="color: #8b949e"># Lógica de comparación</span><br>
+<span style="color: #8b949e"># Usamos == para comparar el texto y >= para comparar los números</span><br>
+puede_entrar = (edad >= <span style="color: #79c0ff">14</span>) <span style="color: #ff7b72">and</span> (palabra_secreta == <span style="color: #a5d6ff">"Python123"</span>)<br><br>
+<span style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"¿Acceso concedido?:"</span>, puede_entrar)
+                </div>
+
+                <h3 class="section-title">📝 Resumen del refuerzo</h3>
+                <table>
+                    <thead>
+                        <tr><th>Lo que quieren hacer</th><th>Lo que deben usar</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Pedir un número decimal</td><td><code>float(input())</code></td></tr>
+                        <tr><td>Saber si dos cosas son iguales</td><td><code>==</code></td></tr>
+                        <tr><td>Saber si algo NO es igual</td><td><code>!=</code></td></tr>
+                        <tr><td>Que se cumplan dos condiciones</td><td><code>and</code></td></tr>
+                        <tr><td>Que se cumpla una de dos opciones</td><td><code>or</code></td></tr>
+                    </tbody>
+                </table>
+            `,
+			'R3': `
+		    <div class="lesson-header">
+		        <p class="mono">> status: reading_boost_03</p>
+		        <h2>⚡ Sesión de refuerzo: Decisiones y estructura</h2>
+		        <p><strong>Objetivo:</strong> Reforzar el uso de condicionales y corregir errores comunes de sintaxis.</p>
+		    </div>
+		
+		    <h3 class="section-title">1. Repaso visual: La anatomía de un if</h3>
+		    <p>Para que el código funcione, siempre debemos seguir este esquema:</p><br>
+		    <ul>
+		        <li>• <strong>La condición:</strong> Termina siempre con dos puntos <code>:</code>.</li>
+		        <li>• <strong>La sangría (Indentación):</strong> Todo lo que esté "dentro" debe tener 4 espacios o sangría (tecla Tab).</li>
+		        <li>• <strong>El orden:</strong> Python lee de arriba hacia abajo. Si la primera es verdad, ignora las demás.</li>
+		    </ul>
+		
+		    <h3 class="section-title">2. Ejercicio 1: El clasificador de rangos gamer</h3>
+		    <p>Instrucción: "Escribe un programa que pida al usuario su puntaje (XP) y le asigne un rango".</p><br>
+			<ul>
+		        <li>• Menos de 1000: <strong>Novato</strong></li>
+				<li>• De 1000 a 2999: <strong>Medio</strong></li>
+				<li>• De 3000 a 4999: <strong>Pro</strong></li>
+				<li>• 5000 o más: <strong>Leyenda</strong></li>
+		    </ul>
+		    <div class="code-block mono">
+		xp = <span style="color: #d2a8ff">int</span>(<span style="color: #d2a8ff">input</span>(<span style="color: #a5d6ff">"¿Cuántos puntos de XP tienes? "</span>))<br><br>
+		<span style="color: #ff7b72">if</span> xp < <span style="color: #79c0ff">1000</span>:<br>
+		    <span style="color: #d2a8ff" class="mar">print</span>(<span style="color: #a5d6ff">"Tu rango es Novato 🐣"</span>)<br>
+			<span style="color: #ff7b72">elif</span> xp < <span style="color: #79c0ff">3000</span>:<br>
+		    <span style="color: #d2a8ff" class="mar">print</span>(<span style="color: #a5d6ff">"Tu rango es Medio 😏​"</span>)<br>
+			<span style="color: #ff7b72">elif</span> xp < <span style="color: #79c0ff">5000</span>:<br>
+		    <span style="color: #d2a8ff" class="mar">print</span>(<span style="color: #a5d6ff">"Tu rango es Pro 😎"</span>)<br>
+			<span style="color: #ff7b72">else</span>:<br>
+		    <span style="color: #d2a8ff" class="mar">print</span>(<span style="color: #a5d6ff">"¡Eres una Leyenda! 🔥"</span>)
+		    </div>
+
+			<div class="alert-box" style="border-color: var(--main-accent)">
+           	 	<strong>💡 Tip de oro:</strong> En el elif no hace falta decir xp >= 1000, porque si llegó ahí es porque la primera fue falsa.
+        	</div>
+		
+		    <h3 class="section-title">3. Ejercicio 2: El guardián de la bóveda</h3>
+		    <p>Uso de condiciones anidadas (un if dentro de otro).</p>
+		    <div class="code-block mono">
+		usuario = <span style="color: #d2a8ff">input</span>(<span style="color: #a5d6ff">"Usuario: "</span>)<br><br>
+		<span style="color: #ff7b72">if</span> usuario == <span style="color: #a5d6ff">"admin"</span>:<br>
+		    <span class="mar">codigo = <span style="color: #d2a8ff">input</span>(<span style="color: #a5d6ff">"Código de 4 dígitos: "</span>)</span><br>
+		    <span style="color: #ff7b72" class="mar">if</span> codigo == <span style="color: #a5d6ff">"1234"</span>:<br>
+		        <span style="color: #d2a8ff" class="mar2">print</span>(<span style="color: #a5d6ff">"🔓 Acceso total concedido."</span>)<br>
+		    <span style="color: #ff7b72" class="mar">else</span>:<br>
+		        <span style="color: #d2a8ff" class="mar2">print</span>(<span style="color: #a5d6ff">"❌ Código incorrecto."</span>)<br>
+		<span style="color: #ff7b72">else</span>:<br>
+		    <span style="color: #d2a8ff" class="mar">print</span>(<span style="color: #a5d6ff">"🚫 Usuario desconocido."</span>)
+		    </div>
+
+			<div class="alert-box" style="border-color: var(--main-accent)">
+           	 	<strong>💡 PREGUNTA:</strong> ¿Qué pasa si escribo mal el usuario? ¿Me pedirá el código?
+        	</div>
+		
+		    <h3 class="section-title">🛠️ Tabla de errores comunes</h3>
+		    <table>
+		        <thead><tr><th>Error</th><th>Por qué pasa</th><th>Cómo arreglarlo</th></tr></thead>
+		        <tbody>
+		            <tr><td>SyntaxError</td><td>Faltan los : al final del if.</td><td>Agrega los dos puntos :.</td></tr>
+		            <tr><td>IndentationError</td><td>Falta el espacio a la izquierda.</td><td>Presiona la tecla Tab.</td></tr>
+		            <tr><td>NameError</td><td>Variable mal escrita.</td><td>Revisa mayúsculas/minúsculas.</td></tr>
+		        </tbody>
+		    </table>
+		`,
+		  'R4': `
+                <div class="lesson-header">
+                    <p class="mono">> status: reading_boost_04</p>
+                    <h2>⚡ Sesión de refuerzo: Domando los bucles</h2>
+                </div>
+
+                <h3 class="section-title">1. El mapa mental de los bucles</h3>
+                <p>Antes de tocar el teclado, aclaramos cuándo usar cada uno:</p>
+                <ul style="margin: 15px 0; padding-left: 20px; list-style-type: disc;">
+                    <li><strong>¿Sabes cuántas veces repetir?</strong> (Ej: "Repite 10 veces", "Para cada nombre en la lista") <span style="color: var(--main-accent)">Usa for.</span></li>
+                    <li><strong>¿No sabes cuándo terminar?</strong> (Ej: "Mientras el usuario no gane", "Mientras la batería sea > 0") <span style="color: var(--main-accent)">Usa while.</span></li>
+                </ul>
+                <div class="alert-box">
+                    Si conoces el número de repeticiones -> <strong>FOR</strong>. <br>
+                    Si desconoces el número de repeticiones -> <strong>WHILE</strong>
+                </div>
+
+                <h3 class="section-title">2. Ejercicio 1: El generador de tablas</h3>
+                <p><strong>Objetivo:</strong> Practicar el bucle for con la función range().</p><br>
+                <p><i>"Crea un programa que pida al usuario un número y luego muestre la tabla de multiplicar de ese número (del 1 al 10)."</i></p>
+                
+                <div class="code-block mono">
+					<span style="color: #8b949e"># Código sugerido</span><br>
+					numero = <span style="color: #d2a8ff">int</span>(<span style="color: #d2a8ff">input</span>(<span style="color: #a5d6ff">"¿De qué número quieres la tabla? "</span>))<br><br>
+					<span style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"Tabla del"</span>, numero)<br>
+					<span style="color: #8b949e"># Usamos range(1, 11) para que incluya el 10</span><br>
+					<span style="color: #ff7b72">for</span> i <span style="color: #ff7b72">in</span> <span style="color: #d2a8ff">range</span>(<span style="color: #79c0ff">1</span>, <span style="color: #79c0ff">11</span>):<br>
+					<span class="mar">resultado = numero * i</span><br>
+					<span class="mar" style="color: #d2a8ff">print</span>(numero, <span style="color: #a5d6ff">"x"</span>, i, <span style="color: #a5d6ff">"="</span>, resultado)
+                </div>
+                <p>💡 <strong>Pregunta de refuerzo:</strong> "¿Qué pasa si usamos range(10)?" </p>
+
+                <h3 class="section-title">3. Ejercicio 2: El cajero automático "Infinito"</h3>
+                <p><strong>Objetivo:</strong> Practicar el bucle while y la sentencia break.</p><br>
+                <p><i>"Imagina que estás en un cajero. El programa debe pedirte un PIN. Si es incorrecto, debe seguir pidiéndolo para siempre. Si es correcto (1234), debe decir 'Acceso concedido' y romperse el bucle."</i></p>
+
+                <div class="code-block mono">
+					<span style="color: #8b949e"># Bucle infinito controlado</span><br>
+					<span style="color: #ff7b72">while True</span>:<br>
+					<span class="mar">pin</span> = <span style="color: #d2a8ff">input</span>(<span style="color: #a5d6ff">"Introduce tu PIN de seguridad: "</span>)<br><br>
+					<span class="mar" style="color: #ff7b72">if</span> pin == <span style="color: #a5d6ff">"1234"</span>:<br>
+					<span class="mar2" style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"✅ PIN Correcto. Bienvenido a su cuenta."</span>)<br>
+					<span class="mar2" style="color: #ff7b72">break</span>  <span style="color: #8b949e"># Aquí detenemos el bucle por completo</span><br>
+					<span class="mar" style="color: #ff7b72">elif</span> pin == <span style="color: #a5d6ff">"ayuda"</span>:<br>
+					<span class="mar2" style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"💡 El PIN es de 4 números"</span>)<br>
+					<span class="mar2" style="color: #ff7b72">continue</span> <span style="color: #8b949e"># Salta el resto y vuelve a pedir el PIN</span><br>
+					<span class="mar" style="color: #ff7b72">else</span>:<br>
+					<span class="mar2"style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"❌ PIN Incorrecto. Inténtalo de nuevo."</span>)<br><br>
+					<span style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"Fin del proceso."</span>)
+                </div>
+
+                <h3 class="section-title">📝 Tips para evitar errores (cheat sheet)</h3>
+                <div class="alert-box">
+                    <ul style="padding-left: 20px; list-style-type: square;">
+                        <li><strong>El -1 en range:</strong> Recuerda que range(5) llega hasta el 4. Si quieres llegar al 5, usa range(1, 6).</li>
+                        <li><strong>Cuidado con el while True:</strong> Siempre debe haber un break dentro, o el programa no se detendrá nunca.</li>
+                        <li><strong>Identación:</strong> El código que quieres que se repita debe tener el espacio a la izquierda después del for o while.</li>
+                    </ul>
+                </div>
             `
         };
 
@@ -559,8 +847,8 @@
         }
 
         const gridR = document.getElementById('grid-refuerzo');
-        for(let i=1; i<=11; i++) {
-            gridR.innerHTML += `<div class="class-card"><div><span class="mono" style="color:var(--boost-accent); font-size:0.8rem">REFUERZO ${i.toString().padStart(2,'0')}</span><h3>Lab ${i}</h3><p>Práctica intensiva.</p></div><a href="#" class="btn-action btn-boost">Iniciar Lab</a></div>`;
+        for(let i=5; i<=11; i++) {
+            gridR.innerHTML += `<div class="class-card"><div><span class="mono" style="color:var(--boost-accent); font-size:0.8rem">REFUERZO ${i.toString().padStart(2,'0')}</span><h3>Lab ${i}</h3><p>Práctica intensiva.</p></div><a href="#" class="btn-action btn-boost" style="opacity:0.5">Bloqueado</a></div>`;
         }
     </script>
 </body>
