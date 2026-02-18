@@ -146,6 +146,28 @@
             background: rgba(210, 153, 34, 0.1); border: 1px solid var(--warning);
             padding: 15px; border-radius: 6px; margin: 20px 0;
         }
+		.exam-exercise {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .timer-badge {
+            display: inline-block;
+            background: var(--code-bg);
+            color: var(--warning);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            border: 1px solid var(--warning);
+        }
+        .points-badge {
+            float: right;
+            color: var(--boost-accent);
+            font-weight: bold;
+        }
         table { width: 100%; border-collapse: collapse; margin: 20px 0; }
         th, td { border: 1px solid var(--border); padding: 12px; text-align: left; }
         th { background: var(--bg-card); color: var(--main-accent); }
@@ -212,6 +234,14 @@
                             <p>Aprende a usar bucles for y while para automatizar tareas repetitivas.</p>
                         </div>
                         <a href="javascript:void(0)" class="btn-action btn-main" onclick="loadLesson(4)">Ver contenido</a>
+                    </div>
+					<div class="class-card">
+                        <div>
+                            <span class="mono" style="color:var(--terminal-green); font-size:0.8rem">CLASE 05</span>
+                            <h3>💻 Examen Práctico: Python I</h3>
+                            <p>Evaluación de fundamentos: variables, condicionales y bucles.</p>
+                        </div>
+                        <a href="javascript:void(0)" class="btn-action btn-main" style="background: var(--terminal-green); color: black;" onclick="loadLesson(x)">Bloqueado</a>
                     </div>
                 </div>
             </div>
@@ -585,7 +615,70 @@
                         <tr><td><strong>continue</strong></td><td>Saltar solo la vuelta actual del bucle.</td></tr>
                     </tbody>
                 </table>
-            `, 
+            `,
+			5: `
+                <div class="lesson-header">
+                    <p class="mono">> status: final_evaluation_v1.0</p>
+                    <h2>💻 Examen práctico de programación: Python I</h2>
+                    <p><strong>Duración total:</strong> 70 Minutos | <strong>Puntaje Máximo:</strong> 20 pts</p>
+                </div>
+
+                <div class="alert-box">
+                    <strong>Instrucciones:</strong><br><br>
+                    1. Lee cada enunciado y escribe el código necesario para resolver el problema.<br>
+                    2. Cuida la <strong>indentación</strong> y el uso de los <strong>:</strong> donde corresponda.<br>
+                    3. Crear una carpeta en el computador con el nombre de los integrantes.<br>
+                    4. Guardar cada uno de los ejercicios dentro de la carpeta.<br>
+                    5. La ruta para guardar el archivo es: <strong>File > Save and Export Notebook As > Executable Script</strong>.
+                </div>
+
+                <h3 class="section-title">Nivel 1: Básico (Variables e interacción)</h3>
+                
+                <div class="exam-exercise">
+                    <span class="points-badge">2 pts</span>
+                    <div class="timer-badge">⏱ Tiempo sugerido: 5 min</div>
+                    <p><strong>Ejercicio 1:</strong> Escribe un programa que le pida al usuario su nombre y su deporte favorito. Luego, debe imprimir un mensaje que diga: <span style="color:var(--main-accent)">"Hola [nombre], qué bueno que te guste el [deporte]"</span>.</p>
+                </div>
+
+                <div class="exam-exercise">
+                    <span class="points-badge">3 pts</span>
+                    <div class="timer-badge">⏱ Tiempo sugerido: 5 min</div>
+                    <p><strong>Ejercicio 2:</strong> Crea un programa que pida un número al usuario, lo convierta a entero y luego imprima el doble de ese número y el triple.</p>
+                </div>
+
+                <h3 class="section-title">Nivel 2: Intermedio (Operadores y condicionales)</h3>
+
+                <div class="exam-exercise">
+                    <span class="points-badge">4 pts</span>
+                    <div class="timer-badge">⏱ Tiempo sugerido: 10 min</div>
+                    <p><strong>Ejercicio 3:</strong> Un cine ofrece entradas gratis solo a personas que tengan exactamente 13 años o que tengan un código promocional igual a <strong>"VIP2024"</strong>. Escribe un programa que pida la edad y el código, y diga <span style="color:var(--main-accent)">True</span> si entra gratis o <span style="color:var(--main-accent)">False</span> si no.</p>
+                </div>
+
+                <div class="exam-exercise">
+                    <span class="points-badge">4 pts</span>
+                    <div class="timer-badge">⏱ Tiempo sugerido: 10 min</div>
+                    <p><strong>Ejercicio 4:</strong> Crea un "Clasificador de Clima". Pide al usuario la temperatura (decimal).<br><br>
+                    • Si es mayor a 30, imprime: <span style="color:var(--warning)">"Hace mucho calor"</span>.<br>
+                    • Si está entre 15 y 30 (inclusive), imprime: <span style="color:var(--main-accent)">"Clima agradable"</span>.<br>
+                    • Si es menor a 15, imprime: <span style="color:var(--boost-accent)">"Hace frío"</span>.</p>
+                </div>
+
+                <h3 class="section-title">Nivel 3: Avanzado (Bucles y control de flujo)</h3>
+
+                <div class="exam-exercise">
+                    <span class="points-badge">3.5 pts</span>
+                    <div class="timer-badge">⏱ Tiempo sugerido: 20 min</div>
+                    <p><strong>Ejercicio 5:</strong> Escribe un programa que use un bucle para mostrar todos los números del 20 al 0 (cuenta regresiva) de un artefacto explosivo, <strong>excepto</strong> los números 20, 15, 10 y 5. Al final, debe imprimir la palabra: <span style="color:var(--terminal-green)">"¡IGNICIÓN!"</span>. Para que pueda iniciar el ciclo debe pedir el número al usuario.</p>
+                </div>
+
+                <div class="exam-exercise">
+                    <span class="points-badge">3.5 pts</span>
+                    <div class="timer-badge">⏱ Tiempo sugerido: 20 min</div>
+                    <p><strong>Ejercicio 6:</strong> "El portero infinito". Crea un bucle while que pida una contraseña y nombre al usuario.<br><br>
+                    • Si el usuario escribe <strong>"secreto123"</strong>, el programa debe decir <span style="color:var(--terminal-green)">"Acceso permitito [nombre]"</span> y detenerse.<br>
+                    • Mientras la contraseña sea incorrecta, el programa debe seguir pidiéndola una y otra vez, además de mostrar el mensaje <span style="color:var(--warning)">"Acceso denegado - Intente nuevamente"</span></p>
+                </div>
+            `,
             'R1': `
                 <div class="lesson-header">
                     <p class="mono">> status: reading_boost_01</p>
@@ -842,7 +935,7 @@ puede_entrar = (edad >= <span style="color: #79c0ff">14</span>) <span style="col
 
         // Generar placeholders para el resto
         const gridP = document.getElementById('grid-principales');
-        for(let i=5; i<=11; i++) {
+        for(let i=6; i<=11; i++) {
             gridP.innerHTML += `<div class="class-card"><div><span class="mono" style="color:var(--text-muted); font-size:0.8rem">CLASE ${i.toString().padStart(2,'0')}</span><h3>Próximamente</h3><p>Contenido en desarrollo.</p></div><a href="#" class="btn-action btn-main" style="opacity:0.5">Bloqueado</a></div>`;
         }
 
