@@ -241,7 +241,7 @@
                             <h3>💻 Examen Práctico: Python I</h3>
                             <p>Evaluación de fundamentos: variables, condicionales y bucles.</p>
                         </div>
-                        <a href="javascript:void(0)" class="btn-action btn-main" style="background: var(--terminal-green); color: black;" onclick="loadLesson(5)">Iniciar</a>
+                        <a href="javascript:void(0)" class="btn-action btn-main" style="background: var(--terminal-green); color: black;" onclick="loadLesson(x)">Bloqueado</a>
                     </div>
                 </div>
             </div>
@@ -935,7 +935,7 @@ puede_entrar = (edad >= <span style="color: #79c0ff">14</span>) <span style="col
 
         // Generar placeholders para el resto
         const gridP = document.getElementById('grid-principales');
-        for(let i=6; i<=11; i++) {
+        for(let i=5; i<=11; i++) {
             gridP.innerHTML += `<div class="class-card"><div><span class="mono" style="color:var(--text-muted); font-size:0.8rem">CLASE ${i.toString().padStart(2,'0')}</span><h3>Próximamente</h3><p>Contenido en desarrollo.</p></div><a href="#" class="btn-action btn-main" style="opacity:0.5">Bloqueado</a></div>`;
         }
 
