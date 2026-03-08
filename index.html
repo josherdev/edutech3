@@ -243,6 +243,22 @@
                         </div>
                         <a href="javascript:void(0)" class="btn-action btn-main" style="background: var(--terminal-green); color: black;" onclick="loadLesson(x)">Bloqueado</a>
                     </div>
+					<div class="class-card">
+                        <div>
+                            <span class="mono" style="color:var(--main-accent); font-size:0.8rem">CLASE 06</span>
+                            <h3>Supermercado vs. Caja Fuerte</h3>
+                            <p>Domina el uso de Listas y Tuplas para organizar tus datos.</p>
+                        </div>
+                        <a href="javascript:void(0)" class="btn-action btn-main" onclick="loadLesson(x)">Bloqueado</a>
+                    </div>
+					<div class="class-card">
+                        <div>
+                            <span class="mono" style="color:var(--main-accent); font-size:0.8rem">CLASE 07</span>
+                            <h3>Creando tus propias herramientas</h3>
+                            <p>Aprende a encapsular código reutilizable con funciones.</p>
+                        </div>
+                        <a href="javascript:void(0)" class="btn-action btn-main" onclick="loadLesson(x)">Bloqueado</a>
+                    </div>
                 </div>
             </div>
 
@@ -679,6 +695,203 @@
                     • Mientras la contraseña sea incorrecta, el programa debe seguir pidiéndola una y otra vez, además de mostrar el mensaje <span style="color:var(--warning)">"Acceso denegado - Intente nuevamente"</span></p>
                 </div>
             `,
+			 6: `
+                <div class="lesson-header">
+                    <p class="mono">> status: reading_module_06</p>
+                    <h2>📦 CLASE: SUPERMERCADO VS. CAJA FUERTE (LISTAS Y TUPLAS)</h2>
+                    <p><strong>Objetivo:</strong> Aprender a almacenar múltiples elementos en una sola variable y entender cuándo permitir cambios y cuándo proteger los datos.</p>
+                </div>
+
+                <h3 class="section-title">1. ¿Por qué necesitamos colecciones?</h3>
+                <p>Hasta ahora, cada variable es una caja con un solo objeto: <code style="color:var(--main-accent)">jugador = "Alex"</code>.</p>
+                <p><strong>El problema:</strong> ¿Y si tenemos 100 jugadores? No vamos a crear 100 variables manuales.<br>
+                <strong>La solución:</strong> Usar una Lista. Imagina un estante con compartimentos numerados.</p>
+
+                <h3 class="section-title">2. Listas: Los estantes flexibles</h3>
+                <p>Las listas se definen con corchetes <strong>[]</strong>. Son mutables (se pueden cambiar, añadir o quitar cosas).</p>
+                
+                <p><strong>Indexación (Direcciones de casa)</strong><br>
+                Para sacar algo de la lista, usamos su índice (posición).</p>
+                
+                <div class="alert-box">
+                    ⚠️ <strong>Regla de Oro:</strong> ¡Python empieza a contar desde <strong>0</strong>, no desde 1!
+                </div>
+
+                <div class="code-block mono">
+                    <span style="color: #8b949e"># Definición de la lista</span><br>
+                    frutas = [<span style="color: #a5d6ff">"Manzana"</span>, <span style="color: #a5d6ff">"Banana"</span>, <span style="color: #a5d6ff">"Cereza"</span>]<br>
+                    <span style="color: #8b949e"># Indice:     0          1          2</span><br><br>
+                    <span style="color: #d2a8ff">print</span>(frutas[<span style="color: #79c0ff">0</span>]) <span style="color: #8b949e"># Imprime: Manzana</span>
+                </div>
+
+                <p><strong>Slicing (Cortar rebanadas):</strong> Podemos tomar una "rebanada" de la lista usando <code style="color:var(--main-accent)">[inicio : fin]</code>. Python toma desde el inicio hasta uno antes del fin.</p>
+
+                <h3 class="section-title">3. Métodos de Listas: ¡Manos a la obra!</h3>
+                <p>Como las listas son mutables, tienen "superpoderes" (métodos) para modificarlas:</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Método</th>
+                            <th>¿Qué hace?</th>
+                            <th>Ejemplo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>.append()</strong></td>
+                            <td>Añade al final</td>
+                            <td><code>lista.append("Pera")</code></td>
+                        </tr>
+                        <tr>
+                            <td><strong>.insert()</strong></td>
+                            <td>Añade en una posición específica</td>
+                            <td><code>lista.insert(1, "Uva")</code></td>
+                        </tr>
+                        <tr>
+                            <td><strong>.remove()</strong></td>
+                            <td>Borra un elemento por su nombre</td>
+                            <td><code>lista.remove("Banana")</code></td>
+                        </tr>
+                        <tr>
+                            <td><strong>.pop()</strong></td>
+                            <td>Borra por posición (o el último)</td>
+                            <td><code>lista.pop(0)</code></td>
+                        </tr>
+                        <tr>
+                            <td><strong>.sort()</strong></td>
+                            <td>Ordena alfabéticamente o numéricamente</td>
+                            <td><code>lista.sort()</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p><strong>Práctica rápida:</strong></p>
+                <div class="code-block mono">
+                    mochila = [<span style="color: #a5d6ff">"Mapa"</span>, <span style="color: #a5d6ff">"Brújula"</span>]<br>
+                    mochila.append(<span style="color: #a5d6ff">"Cuerda"</span>)<br>
+                    mochila[<span style="color: #79c0ff">0</span>] = <span style="color: #a5d6ff">"Mapa Mágico"</span> <span style="color: #8b949e"># Cambiar un elemento directamente</span><br>
+                    <span style="color: #d2a8ff">print</span>(mochila)
+                </div>
+
+                <h3 class="section-title">4. Tuplas: Las cajas selladas</h3>
+                <p>Las tuplas se definen con paréntesis <strong>()</strong>. Su gran secreto es que son <strong>inmutables</strong>.</p>
+                <p><strong>¿Qué significa?</strong> Una vez creada, no puedes añadir, quitar ni cambiar nada.<br>
+                <strong>¿Para qué sirven?</strong> Datos que nunca deben cambiar (coordenadas GPS, los meses del año, colores RGB).</p>
+
+                <div class="code-block mono">
+                    colores_bandera = (<span style="color: #a5d6ff">"Amarillo"</span>, <span style="color: #a5d6ff">"Azul"</span>, <span style="color: #a5d6ff">"Rojo"</span>)<br>
+                    <span style="color: #8b949e"># colores_bandera[0] = "Verde"  <-- ¡Esto daría un ERROR!</span>
+                </div>
+
+                <h3 class="section-title">5. El Desafío Final: "Inventario de RPG"</h3>
+                <p>Crea el sistema de objetos de un caballero:</p>
+                <ol style="margin-left: 20px; color: var(--text-main)">
+					<li>Capturar el nombre del caballero.</li>
+                    <li>Crear una lista llamada <code>inventario</code> con: "Espada", "Escudo", "Poción".</li>
+                    <li>Añadir "Casco" al final.</li>
+                    <li>El caballero pierde su "Escudo" (borrarlo).</li>
+					<li>Añade en segunda posición "Botas".</li>
+                    <li>Crear una tupla llamada <code>posicion_castillo</code> con las coordenadas (45.5, 10.2).</li>
+                    <li>Imprimir el nombre del caballero, los objetos finales de forma ordenada y la posición de su castillo.</li>
+                </ol>
+
+                <div class="alert-box" style="border-color: var(--main-accent); background: rgba(88, 166, 255, 0.1)">
+                    <strong>📝 Resumen para la pizarra:</strong><br>
+                    • <strong>Listas []:</strong> Flexibles, cambian, tienen métodos como .append().<br>
+                    • <strong>Tuplas ():</strong> Seguras, fijas, no se pueden modificar tras crearse.<br>
+                    • <strong>Índices:</strong> Siempre empiezan en 0.<br>
+                    • <strong>Slicing:</strong> [1:4] extrae los elementos en las posiciones 1, 2 y 3.
+                </div>
+            `,
+			7: `
+                <div class="lesson-header">
+                    <p class="mono">> status: reading_module_07</p>
+                    <h2>🛠 Clase: Creando tus propias herramientas (Funciones en Python)</h2>
+                    <p><strong>Objetivo:</strong> Comprender cómo encapsular código para reutilizarlo, cómo pasar información a esas funciones y cómo recibir resultados de vuelta.</p>
+                </div>
+
+                <h3 class="section-title">1. El concepto: La "caja negra"</h3>
+                <p>Imagina que tienes una máquina para hacer jugos. Tú le das fruta (entrada), la máquina hace un proceso interno que no ves, y te entrega jugo (salida).</p><br>
+
+                <p><strong>¿Por qué usarlas?</strong><br><br>
+                • Evitan repetir código.<br>
+                • Hacen que el código sea más ordenado.<br>
+                • Si algo falla, solo lo arreglas en un lugar.</p>
+
+                <h3 class="section-title">2. Definiendo una función: def</h3>
+                <p>Para crear una función usamos la palabra clave <strong>def</strong> (de <i>define</i>).</p>
+                <div class="code-block mono">
+                    <span style="color: #ff7b72">def</span> <span style="color: #d2a8ff">saludar</span>():<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"¡Hola, programador!"</span>)<br><br>
+                    <span style="color: #8b949e"># Para que funcione, hay que "llamarla":</span><br>
+                    saludar()
+                </div>
+
+                <p><strong>Parámetros y argumentos:</strong><br><br>
+                • <strong>Parámetro:</strong> Es la variable que pones entre los paréntesis al definir (el molde).<br>
+                • <strong>Argumento:</strong> Es el valor real que le pasas al llamar a la función.</p>
+                
+                <div class="code-block mono">
+                    <span style="color: #ff7b72">def</span> <span style="color: #d2a8ff">saludar_personalizado</span>(nombre): <span style="color: #8b949e"># 'nombre' es el parámetro</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"Hola,"</span>, nombre)<br><br>
+                    saludar_personalizado(<span style="color: #a5d6ff">"Luis"</span>) <span style="color: #8b949e"># "Luis" es el argumento</span>
+                </div>
+
+                <h3 class="section-title">3. El valor de retorno: return</h3>
+                <p>Este es el concepto más importante. Una función puede simplemente mostrar algo (print) o entregarte un valor para que lo uses después (return).</p><br>
+                <p><strong>La diferencia:</strong> <code>print</code> es como un cartel que alguien sostiene. <code>return</code> es como una moneda que te ponen en la mano para que la guardes en tu bolsillo (variable).</p>
+
+                <div class="code-block mono">
+                    <span style="color: #ff7b72">def</span> <span style="color: #d2a8ff">sumar</span>(a, b):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff7b72">return</span> a + b<br><br>
+                    resultado = sumar(<span style="color: #79c0ff">5</span>, <span style="color: #79c0ff">10</span>) <span style="color: #8b949e"># El valor 15 se guarda en 'resultado'</span><br>
+                    <span style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"El total es:"</span>, resultado)
+                </div>
+
+                <h3 class="section-title">4. Ámbito de variables: ¿Quién vive dónde?</h3>
+                <p>No todas las variables son visibles en todo el programa.</p><br>
+                <p>• <strong>Variable local:</strong> Creada dentro de una función. Solo existe ahí (como lo que pasa dentro de una casa).<br>
+                • <strong>Variable global:</strong> Creada fuera de las funciones. Todos pueden verla.</p>
+
+                <div class="code-block mono">
+                    puntos_globales = <span style="color: #79c0ff">100</span> <span style="color: #8b949e"># Global</span><br><br>
+                    <span style="color: #ff7b72">def</span> <span style="color: #d2a8ff">jugar</span>():<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;recompensa = <span style="color: #79c0ff">10</span> <span style="color: #8b949e"># Local</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #d2a8ff">print</span>(puntos_globales + recompensa) <span style="color: #8b949e"># Esto funciona</span><br><br>
+                    <span style="color: #8b949e"># print(recompensa) # ¡ESTO DARÍA ERROR!</span>
+                </div>
+
+                <h3 class="section-title">5. Práctica: "La calculadora de superpoderes"</h3>
+                <p>Escribe un programa con dos funciones: <code>calcular_fuerza</code> y <code>mostrar_stats</code>.</p>
+                
+                <div class="code-block mono">
+                    heroe = <span style="color: #d2a8ff">input</span>(<span style="color: #a5d6ff">"Ingrese el nombre de su heroe >> "</span>)<br>
+                    nivel = <span style="color: #d2a8ff">int</span>(<span style="color: #d2a8ff">input</span>(<span style="color: #a5d6ff">"Ingrese su nivel >> "</span>))<br>
+                    objeto = <span style="color: #d2a8ff">input</span>(<span style="color: #a5d6ff">"Ingrese el tipo de objeto >> "</span>)<br><br>
+                    <span style="color: #ff7b72">def</span> <span style="color: #d2a8ff">calcular_fuerza</span>(nivel, objeto):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff7b72">if</span> objeto == <span style="color: #a5d6ff">"espada"</span>:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff7b72">return</span> nivel * <span style="color: #79c0ff">10</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff7b72">else</span>:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff7b72">return</span> nivel * <span style="color: #79c0ff">5</span><br><br>
+                    fuerza = calcular_fuerza(nivel, objeto)<br><br>
+                    <span style="color: #ff7b72">def</span> <span style="color: #d2a8ff">mostrar_stats</span>(heroe, fuerza):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"Tu heroe"</span>, heroe, <span style="color: #a5d6ff">"tiene una fuerza de:"</span>, fuerza)<br><br>
+                    mostrar_stats(heroe, fuerza)
+                </div>
+
+                <div class="alert-box">
+                    <strong>📝 Resumen para la pizarra</strong>
+                    <table>
+                        <tr><th>Término</th><th>Significado</th></tr>
+                        <tr><td><strong>def</strong></td><td>Palabra para empezar a definir una función.</td></tr>
+                        <tr><td><strong>Parámetro</strong></td><td>El "hueco" que dejamos para recibir datos.</td></tr>
+                        <tr><td><strong>return</strong></td><td>Envía un resultado de vuelta al programa principal.</td></tr>
+                        <tr><td><strong>Local</strong></td><td>Variable que solo vive dentro de la función.</td></tr>
+                        <tr><td><strong>Global</strong></td><td>Variable que vive en todo el archivo.</td></tr>
+                    </table>
+                </div>
+            `,
             'R1': `
                 <div class="lesson-header">
                     <p class="mono">> status: reading_boost_01</p>
@@ -935,7 +1148,7 @@ puede_entrar = (edad >= <span style="color: #79c0ff">14</span>) <span style="col
 
         // Generar placeholders para el resto
         const gridP = document.getElementById('grid-principales');
-        for(let i=6; i<=11; i++) {
+        for(let i=8; i<=11; i++) {
             gridP.innerHTML += `<div class="class-card"><div><span class="mono" style="color:var(--text-muted); font-size:0.8rem">CLASE ${i.toString().padStart(2,'0')}</span><h3>Próximamente</h3><p>Contenido en desarrollo.</p></div><a href="#" class="btn-action btn-main" style="opacity:0.5">Bloqueado</a></div>`;
         }
 
