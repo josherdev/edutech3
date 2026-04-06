@@ -241,7 +241,7 @@
                             <h3>💻 Examen Práctico: Python I</h3>
                             <p>Evaluación de fundamentos: variables, condicionales y bucles.</p>
                         </div>
-                        <a href="javascript:void(0)" class="btn-action btn-main" style="background: var(--terminal-green); color: black;" onclick="loadLesson(5)">Ver clase</a>
+                        <a href="javascript:void(0)" class="btn-action btn-main" style="background: var(--terminal-green); color: black;" onclick="loadLesson(5)">Ver contenido</a>
                     </div>
 					<div class="class-card">
                         <div>
@@ -249,7 +249,7 @@
                             <h3>Supermercado vs. Caja Fuerte</h3>
                             <p>Domina el uso de Listas y Tuplas para organizar tus datos.</p>
                         </div>
-                        <a href="javascript:void(0)" class="btn-action btn-main" onclick="loadLesson(6)">Ver clase</a>
+                        <a href="javascript:void(0)" class="btn-action btn-main" onclick="loadLesson(6)">Ver contenido</a>
                     </div>
 					<div class="class-card">
                         <div>
@@ -257,7 +257,15 @@
                             <h3>Creando tus propias herramientas</h3>
                             <p>Aprende a encapsular código reutilizable con funciones.</p>
                         </div>
-                        <a href="javascript:void(0)" class="btn-action btn-main" onclick="loadLesson(7)">Ver clase</a>
+                        <a href="javascript:void(0)" class="btn-action btn-main" onclick="loadLesson(7)">Ver contenido</a>
+                    </div>
+					 <div class="class-card">
+                        <div>
+                            <span class="mono" style="color:var(--main-accent); font-size:0.8rem">CLASE 08</span>
+                            <h3>📖 Diccionarios y persistencia</h3>
+                            <p>Mapeo de datos y guardado en archivos externos.</p>
+                        </div>
+                        <a href="javascript:void(0)" class="btn-action btn-main" onclick="loadLesson(8)">Ver contenido</a>
                     </div>
                 </div>
             </div>
@@ -292,6 +300,30 @@
                             <p>El mapa mental de los bucles y cuándo usarlos.</p>
                         </div>
                         <a href="javascript:void(0)" class="btn-action btn-boost" onclick="loadLesson('R4')">Ver contenido</a>
+                    </div>
+					<div class="class-card">
+                        <div>
+                            <span class="mono" style="color:var(--boost-accent); font-size:0.8rem">REFUERZO 05</span>
+                            <h3>Listas y tuplas</h3>
+                            <p>Domina el uso de Listas y Tuplas para organizar tus datos.</p>
+                        </div>
+                        <a href="javascript:void(0)" class="btn-action btn-boost" onclick="loadLesson('R5')">Ver contenido</a>
+                    </div>
+					<div class="class-card">
+                        <div>
+                            <span class="mono" style="color:var(--boost-accent); font-size:0.8rem">REFUERZO 06</span>
+                            <h3>El poder de las funciones</h3>
+                            <p>Ejercicios prácticos, Scope y el Conversor Gamer.</p>
+                        </div>
+                        <a href="javascript:void(0)" class="btn-action btn-boost" onclick="loadLesson('R6')">Ver contenido</a>
+                    </div>
+					<div class="class-card">
+                        <div>
+                            <span class="mono" style="color:var(--boost-accent); font-size:0.8rem">REFUERZO 07</span>
+                            <h3>Diccionarios y archivos</h3>
+                            <p>Pociones, registros de visitantes y tips de éxito.</p>
+                        </div>
+                        <a href="javascript:void(0)" class="btn-action btn-boost" onclick="loadLesson('R7')">Ver contenido</a>
                     </div>
                 </div>
             </div>
@@ -892,6 +924,83 @@
                     </table>
                 </div>
             `,
+			8: `
+                <div class="lesson-header">
+                    <p class="mono">> status: access_granted_to_storage_module</p>
+                    <h2>📖 Clase: Diccionarios y persistencia (Guardando datos)</h2>
+                    <p><strong>Objetivo:</strong> Comprender la estructura de mapeo (clave-valor) y aprender a leer y escribir archivos externos para que nuestros programas "tengan memoria".</p>
+                </div>
+
+                <h3 class="section-title">1. ¿Cómo guarda Instagram tu perfil?</h3>
+                <p>Imagina que Instagram tiene que guardar los datos de millones de usuarios. No usa una lista simple porque sería lentísimo buscar tu nombre entre millones.</p>
+                <p><strong>El concepto:</strong> Un <strong>Diccionario</strong> es una colección de datos organizados por una <strong>Clave única</strong> (como tu nombre de usuario) y un <strong>Valor asociado</strong> (como tu número de seguidores).</p>
+                
+                
+
+                <p><strong>Analogía:</strong> Una lista de contactos en el celular. Buscas por "Nombre" (Clave) para obtener el "Teléfono" (Valor).</p>
+
+                <h3 class="section-title">2. Diccionarios: La estructura Clave-Valor</h3>
+                <p>En Python, los diccionarios usan llaves <strong>{ }</strong>.</p>
+                
+                <div class="code-block mono">
+                    usuario = {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #a5d6ff">"nombre"</span>: <span style="color: #a5d6ff">"Alex"</span>,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #a5d6ff">"edad"</span>: <span style="color: #79c0ff">14</span>,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #a5d6ff">"es_pro"</span>: <span style="color: #ff7b72">True</span><br>
+                    }
+                </div>
+
+                <p><strong>Acceso y Manipulación:</strong></p>
+                <ul style="margin-left: 20px;">
+                    <li>• <strong>Leer:</strong> <code>print(usuario["nombre"])</code></li>
+                    <li>• <strong>Modificar:</strong> <code>usuario["edad"] = 15</code></li>
+                    <li>• <strong>Agregar:</strong> <code>usuario["color"] = "Rojo"</code></li>
+                    <li>• <strong>Eliminar:</strong> <code>del usuario["es_pro"]</code></li>
+                </ul>
+                
+                <div class="alert-box">
+                    ⚠️ <strong>Regla de Oro:</strong> Las claves deben ser únicas. Si repites una clave, Python sobreescribirá el valor anterior.
+                </div>
+
+                <h3 class="section-title">3. Archivos de Texto (.txt): La memoria del programa</h3>
+                <p>Hasta ahora, al cerrar el programa, todo se borraba. Para evitarlo, usamos archivos externos.</p>
+                <p><strong>El flujo de trabajo:</strong> Abrir ➡️ Procesar ➡️ Cerrar</p>
+                <p>La forma más segura de hacerlo es usando <strong>with</strong>, que cierra el archivo automáticamente.</p>
+
+                <p><strong>A. Escritura (Modo 'w' de Write o 'a' de Append):</strong></p>
+                <div class="code-block mono">
+                    <span style="color: #ff7b72">with</span> <span style="color: #d2a8ff">open</span>(<span style="color: #a5d6ff">"mensaje.txt"</span>, <span style="color: #a5d6ff">"w"</span>) <span style="color: #ff7b72">as</span> archivo:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;archivo.write(<span style="color: #a5d6ff">"¡Hola! Este mensaje se guardó en el disco duro."</span>)
+                </div>
+
+                <p><strong>B. Lectura (Modo 'r' de Read):</strong></p>
+                <div class="code-block mono">
+                    <span style="color: #ff7b72">with</span> <span style="color: #d2a8ff">open</span>(<span style="color: #a5d6ff">"mensaje.txt"</span>, <span style="color: #a5d6ff">"r"</span>) <span style="color: #ff7b72">as</span> archivo:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;contenido = archivo.read()<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #d2a8ff">print</span>(contenido)
+                </div>
+
+                <h3 class="section-title">4. Reto Integrador: "El diario secreto"</h3>
+                <p>Crea un programa que una ambos conceptos:</p>
+                <div class="code-block mono">
+                    perfil = {<span style="color: #a5d6ff">"usuario"</span>: <span style="color: #a5d6ff">"Programador123"</span>}<br>
+                    nota = <span style="color: #d2a8ff">input</span>(<span style="color: #a5d6ff">"Escribe tu nota del día: "</span>)<br><br>
+                    <span style="color: #ff7b72">with</span> <span style="color: #d2a8ff">open</span>(<span style="color: #a5d6ff">"diario.txt"</span>, <span style="color: #a5d6ff">"a"</span>) <span style="color: #ff7b72">as</span> file:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;file.write(<span style="color: #a5d6ff">f"Usuario: {perfil['usuario']} - Nota: {nota}\\n"</span>)<br><br>
+                    <span style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"¡Datos guardados con éxito!"</span>)
+                </div>
+
+                <div class="alert-box" style="border-color: var(--main-accent); background: rgba(88, 166, 255, 0.1)">
+                    <strong>📝 Resumen para la pizarra</strong>
+                    <table>
+                        <tr><th>Herramienta</th><th>Uso Principal</th><th>Símbolo</th></tr>
+                        <tr><td><strong>Diccionario</strong></td><td>Organizar datos por etiquetas (Claves).</td><td>{ "clave": "valor" }</td></tr>
+                        <tr><td><strong>open(..., "w")</strong></td><td>Crear o sobreescribir un archivo.</td><td>Write (Escribir)</td></tr>
+                        <tr><td><strong>open(..., "a")</strong></td><td>Añadir texto al final de un archivo.</td><td>Append (Añadir)</td></tr>
+                        <tr><td><strong>open(..., "r")</strong></td><td>Leer la información de un archivo.</td><td>Read (Leer)</td></tr>
+                    </table>
+                </div>
+            `,
             'R1': `
                 <div class="lesson-header">
                     <p class="mono">> status: reading_boost_01</p>
@@ -1122,7 +1231,202 @@ puede_entrar = (edad >= <span style="color: #79c0ff">14</span>) <span style="col
                         <li><strong>Identación:</strong> El código que quieres que se repita debe tener el espacio a la izquierda después del for o while.</li>
                     </ul>
                 </div>
-            `
+            `,
+            'R5': `
+                <div class="lesson-header">
+                    <p class="mono">> status: reading_boost_05</p>
+                    <h2>REFUERZO EXPRESS: LISTAS Y TUPLAS</h2>
+                </div>
+
+                <h3 class="section-title">1. El recordatorio visual</h3>
+                <p>Antes de programar, visualicemos la diferencia en la memoria de la computadora:</p>
+                <ul style="margin-left: 20px; margin-bottom: 20px;">
+                    <li>• <strong>Listas [ ]:</strong> Son como un archivador abierto. Puedes sacar carpetas, meter nuevas o cambiarles el nombre. <strong>Es mutable.</strong></li>
+                    <li>• <strong>Tuplas ( ):</strong> Son como un bloque de cemento con datos grabados. Una vez que se seca (se crea), no se puede modificar. <strong>Es inmutable.</strong></li>
+                </ul>
+
+                <p><strong>La regla del cero</strong><br>
+                Recuerda que en Python, el primer elemento no es el 1, es el 0.</p>
+                <div class="code-block mono">
+                    colores = [<span style="color: #a5d6ff">"rojo"</span>, <span style="color: #a5d6ff">"azul"</span>, <span style="color: #a5d6ff">"verde"</span>]<br>
+                    colores[<span style="color: #79c0ff">0</span>] -> <span style="color: #a5d6ff">"rojo"</span><br>
+                    colores[<span style="color: #79c0ff">2</span>] -> <span style="color: #a5d6ff">"verde"</span>
+                </div>
+
+                <h3 class="section-title">2. Ejercicio 1: El gestor de "Playlist"</h3>
+                <p><strong>Objetivo:</strong> Practicar métodos de listas (append, pop, sort).</p>
+                <p><i>"Imagina que estás programando el backend de Spotify. Crea una lista de canciones y modifícala según las acciones del usuario".</i></p>
+                
+                <div class="code-block mono">
+                    <span style="color: #8b949e"># 1. Crear la lista inicial</span><br>
+                    playlist = [<span style="color: #a5d6ff">"Starboy"</span>, <span style="color: #a5d6ff">"Birds"</span>, <span style="color: #a5d6ff">"Hype Boy"</span>]<br><br>
+                    <span style="color: #8b949e"># 2. El usuario añade una canción nueva al final</span><br>
+                    playlist.append(<span style="color: #a5d6ff">"Luna"</span>)<br><br>
+                    <span style="color: #8b949e"># 3. El usuario elimina la segunda canción (índice 1)</span><br>
+                    playlist.pop(<span style="color: #79c0ff">1</span>)<br><br>
+                    <span style="color: #8b949e"># 4. Ordenar la lista alfabéticamente</span><br>
+                    playlist.sort()<br><br>
+                    <span style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"Tu Playlist actualizada:"</span>, playlist)
+                </div>
+
+                <h3 class="section-title">3. Ejercicio 2: El validador de coordenadas</h3>
+                <p><strong>Objetivo:</strong> Entender la seguridad de las Tuplas y el uso de Slicing.</p>
+                <p><i>"Estás programando un dron. Su punto de despegue es una tupla (porque no debe cambiar por error), pero su ruta de vuelo es una lista".</i></p>
+                
+                <div class="code-block mono">
+                    <span style="color: #8b949e"># 1. Punto fijo de despegue (Tupla)</span><br>
+                    despegue = (<span style="color: #79c0ff">10.5</span>, <span style="color: #79c0ff">20.8</span>)<br><br>
+                    <span style="color: #8b949e"># 2. Ruta de vuelo (Lista)</span><br>
+                    ruta = [<span style="color: #a5d6ff">"Norte"</span>, <span style="color: #a5d6ff">"Norte"</span>, <span style="color: #a5d6ff">"Este"</span>, <span style="color: #a5d6ff">"Sur"</span>, <span style="color: #a5d6ff">"Oeste"</span>]<br><br>
+                    <span style="color: #8b949e"># 3. Intento de "Hack" (Esto dará error)</span><br>
+                    <span style="color: #8b949e"># despegue[0] = 50.0 </span><br><br>
+                    <span style="color: #8b949e"># 4. Slicing: Ver solo los primeros 3 movimientos</span><br>
+                    primeros_pasos = ruta[<span style="color: #79c0ff">0</span>:<span style="color: #79c0ff">3</span>]<br><br>
+                    <span style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"Punto de inicio:"</span>, despegue)<br>
+                    <span style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"Primeros 3 movimientos:"</span>, primeros_pasos)
+                </div>
+
+                <div class="alert-box">
+                    <strong>📝 Tabla de resumen para guardar</strong>
+                    <table>
+                        <tr><th>Acción</th><th>Listas []</th><th>Tuplas ()</th></tr>
+                        <tr><td>¿Se puede cambiar?</td><td>Sí (Mutable)</td><td>No (Inmutable)</td></tr>
+                        <tr><td>Añadir elemento</td><td>lista.append(x)</td><td>No se puede</td></tr>
+                        <tr><td>Eliminar elemento</td><td>lista.pop(i)</td><td>No se puede</td></tr>
+                        <tr><td>Uso ideal</td><td>Inventarios, rankings.</td><td>Coordenadas, fechas.</td></tr>
+                    </table>
+                </div>
+            `,
+			'R6': `
+                <div class="lesson-header">
+                    <p class="mono">> status: reading_boost_06</p>
+                    <h2>⚡ Refuerzo Express: El Poder de las Funciones</h2>
+                </div>
+
+                <h3 class="section-title">1. Repaso relámpago</h3>
+                <p>Para entender las funciones, recuerda que son como una función matemática $f(x) = y$: tú le das una entrada (x), ella hace un proceso y te devuelve un resultado (y).</p>
+                
+                <ul style="margin-left: 20px; margin-bottom: 20px;">
+                    <li>• <strong>def:</strong> Es el interruptor que crea la herramienta.</li>
+                    <li>• <strong>Parámetros:</strong> Los "huecos" que la función espera llenar.</li>
+                    <li>• <strong>return:</strong> El resultado que la función lanza de vuelta al programa.</li>
+                    <li>• <strong>Ámbito (Scope):</strong> Las variables creadas dentro de una función son "secretas" y mueren cuando la función termina.</li>
+                </ul>
+
+                <h3 class="section-title">2. Ejercicio 1: El conversor de monedas gamer</h3>
+                <p><strong>Objetivo:</strong> Practicar el uso de parámetros y el valor de return.</p>
+                <p><i>"Imagina que en tu juego 100 monedas de oro equivalen a 1 gema de diamante. Crea una función que reciba la cantidad de oro y devuelva cuántos diamantes puede comprar el jugador".</i></p>
+
+                <div class="code-block mono">
+                    <span style="color: #ff7b72">def</span> <span style="color: #d2a8ff">convertir_a_diamantes</span>(oro):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;resultado = oro / <span style="color: #79c0ff">100</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff7b72">return</span> resultado<br><br>
+                    <span style="color: #8b949e"># Probando la herramienta</span><br>
+                    cantidad_oro = <span style="color: #d2a8ff">int</span>(<span style="color: #d2a8ff">input</span>(<span style="color: #a5d6ff">"¿Cuánto oro tienes? "</span>))<br>
+                    mis_diamantes = convertir_a_diamantes(cantidad_oro)<br><br>
+                    <span style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">f"Con {cantidad_oro} monedas tienes {mis_diamantes} diamantes."</span>)
+                </div>
+
+                <div class="alert-box" style="border-color: var(--main-accent); background: rgba(88, 166, 255, 0.05)">
+                    <strong>Pregunta para los alumnos:</strong> ¿Qué pasaría si intentamos usar la variable <code>resultado</code> fuera de la función? (Error de nombre, porque es local).
+                </div>
+
+                <h3 class="section-title">3. Ejercicio 2: El detective del ámbito</h3>
+                <p><strong>Objetivo:</strong> Identificar errores de visibilidad de variables (Scope).</p>
+                <p><i>"Este código tiene un error. El programador quiere que el robot diga su nombre, pero algo sale mal. ¿Puedes arreglarlo?"</i></p>
+
+                <div class="code-block mono">
+                    <span style="color: #ff7b72">def</span> <span style="color: #d2a8ff">configurar_robot</span>():<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;nombre_robot = <span style="color: #a5d6ff">"R2-D2"</span> <span style="color: #8b949e"># Variable Local</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"Robot configurado."</span>)<br><br>
+                    configurar_robot()<br>
+                    <span style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"El nombre del robot es:"</span>, nombre_robot) <span style="color: #ff7b72; font-weight: bold;"># <-- ¡Aquí está el error!</span>
+                </div>
+
+                <p><strong>La solución:</strong> Hay dos formas de arreglarlo.</p>
+                <ol style="margin-left: 30px; margin-top: 10px;">
+                    <li>Hacer que la función haga <code>return nombre_robot</code>.</li>
+                    <li>O definir <code>nombre_robot</code> fuera de la función (Variable Global).</li>
+                </ol>
+
+                <div class="alert-box">
+                    <strong>📝 Resumen de errores comunes</strong>
+                    <table>
+                        <tr><th>Error</th><th>Por qué ocurre</th></tr>
+                        <tr><td>Olvidar el return</td><td>La función hace el cálculo, pero el resultado se "pierde" en el aire.</td></tr>
+                        <tr><td>Usar variables locales fuera</td><td>Intentar llamar a una variable que solo existe dentro del def.</td></tr>
+                        <tr><td>Olvidar los paréntesis ()</td><td>Si no pones los paréntesis, Python cree que hablas de la herramienta, pero no la "enciende".</td></tr>
+                    </table>
+                </div>
+            `,
+			'R7': `
+                <div class="lesson-header">
+                    <p class="mono">> status: reading_boost_07</p>
+                    <h2>⚡ Refuerzo Express: Diccionarios y Archivos</h2>
+                </div>
+
+                <h3 class="section-title">1. Repaso visual: ¿Clave o valor?</h3>
+                <p>Antes de programar, recuerda que un <strong>Diccionario</strong> es como un mapa de etiquetas. Si conoces la etiqueta (Key), obtienes el contenido (Value).</p>
+                
+                
+                
+                <p>Y para los <strong>Archivos</strong>, la clave es la letra del modo:</p>
+                <ul style="margin-left: 20px; margin-bottom: 20px;">
+                    <li>• <strong>'r' (Read):</strong> Solo mirar.</li>
+                    <li>• <strong>'w' (Write):</strong> Borrar todo y escribir de cero.</li>
+                    <li>• <strong>'a' (Append):</strong> Escribir al final de lo que ya existe (como un chat).</li>
+                </ul>
+
+                <h3 class="section-title">2. Ejercicio 1: Inventario de la tienda de pociones</h3>
+                <p><strong>Objetivo:</strong> Practicar el acceso, modificación y agregado de elementos en un diccionario.</p>
+                <p><i>"Eres el boticario de un videojuego. Tienes un inventario de pociones y sus precios. Debes actualizar el precio de una, agregar una nueva y mostrar cuánto cuesta la poción de 'Vida'".</i></p>
+
+                <div class="code-block mono">
+                    <span style="color: #8b949e"># 1. Crear el diccionario inicial</span><br>
+                    pociones = {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #a5d6ff">"Vida"</span>: <span style="color: #79c0ff">50</span>,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #a5d6ff">"Mana"</span>: <span style="color: #79c0ff">40</span>,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #a5d6ff">"Fuerza"</span>: <span style="color: #79c0ff">100</span><br>
+                    }<br><br>
+                    <span style="color: #8b949e"># 2. Agregar una nueva poción: "Invisibilidad" que cuesta 150</span><br>
+                    pociones[<span style="color: #a5d6ff">"Invisibilidad"</span>] = <span style="color: #79c0ff">150</span><br><br>
+                    <span style="color: #8b949e"># 3. La poción de "Mana" subió de precio a 60</span><br>
+                    pociones[<span style="color: #a5d6ff">"Mana"</span>] = <span style="color: #79c0ff">60</span><br><br>
+                    <span style="color: #8b949e"># 4. Mostrar el precio de la poción de Vida</span><br>
+                    <span style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"La poción de Vida cuesta:"</span>, pociones[<span style="color: #a5d6ff">"Vida"</span>], <span style="color: #a5d6ff">"monedas."</span>)<br><br>
+                    <span style="color: #8b949e"># Extra: Ver todo el inventario</span><br>
+                    <span style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"Inventario completo:"</span>, pociones)
+                </div>
+
+                <h3 class="section-title">3. Ejercicio 2: El registro de visitantes</h3>
+                <p><strong>Objetivo:</strong> Practicar la escritura en archivos usando el modo append para no borrar datos previos.</p>
+                <p><i>"Vamos a crear un sistema que registre quién entra a nuestro laboratorio. El programa debe pedir un nombre y guardarlo en un archivo llamado visitas.txt sin borrar a los anteriores".</i></p>
+
+                <div class="code-block mono">
+                    <span style="color: #8b949e"># 1. Pedir el nombre al usuario</span><br>
+                    visitante = <span style="color: #d2a8ff">input</span>(<span style="color: #a5d6ff">"Introduce tu nombre para el registro: "</span>)<br><br>
+                    <span style="color: #8b949e"># 2. Abrir el archivo en modo 'a' (append) para añadir al final</span><br>
+                    <span style="color: #ff7b72">with</span> <span style="color: #d2a8ff">open</span>(<span style="color: #a5d6ff">"visitas.txt"</span>, <span style="color: #a5d6ff">"a"</span>) <span style="color: #ff7b72">as</span> archivo:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;archivo.write(visitante + <span style="color: #a5d6ff">"\\n"</span>) <span style="color: #8b949e"># \\n sirve para saltar de línea</span><br><br>
+                    <span style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"¡Nombre guardado en el disco duro!"</span>)<br><br>
+                    <span style="color: #8b949e"># 3. (Opcional) Leer el archivo para ver quiénes han venido</span><br>
+                    <span style="color: #d2a8ff">print</span>(<span style="color: #a5d6ff">"--- Lista de Visitantes ---"</span>)<br>
+                    <span style="color: #ff7b72">with</span> <span style="color: #d2a8ff">open</span>(<span style="color: #a5d6ff">"visitas.txt"</span>, <span style="color: #a5d6ff">"r"</span>) <span style="color: #ff7b72">as</span> archivo:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #d2a8ff">print</span>(archivo.read())
+                </div>
+
+                <h3 class="section-title">🛠️ Tips para el éxito online</h3>
+                <ul style="margin-left: 20px;">
+                    <li>• <strong>El error del KeyError:</strong> Si intentas buscar una clave que no existe (ej: <code>pociones["Salto"]</code>), Python se detendrá. ¡Revisa siempre que la clave esté bien escrita!</li>
+                    <li>• <strong>El archivo no aparece:</strong> Si usas un entorno online como Replit, el archivo <code>.txt</code> aparecerá en la barra lateral izquierda apenas se ejecute el código.</li>
+                </ul>
+
+                <div class="alert-box" style="border-color: var(--main-accent); background: rgba(88, 166, 255, 0.05)">
+                    <strong>Diferencia visual clave:</strong><br>
+                    <code>lista[0]</code> -> Usas números (posiciones).<br>
+                    <code>diccionario["nombre"]</code> -> Usas etiquetas (texto).
+                </div>
+            `,
         };
 
         function openTab(evt, tabName) {
@@ -1148,12 +1452,12 @@ puede_entrar = (edad >= <span style="color: #79c0ff">14</span>) <span style="col
 
         // Generar placeholders para el resto
         const gridP = document.getElementById('grid-principales');
-        for(let i=8; i<=11; i++) {
+        for(let i=9; i<=11; i++) {
             gridP.innerHTML += `<div class="class-card"><div><span class="mono" style="color:var(--text-muted); font-size:0.8rem">CLASE ${i.toString().padStart(2,'0')}</span><h3>Próximamente</h3><p>Contenido en desarrollo.</p></div><a href="#" class="btn-action btn-main" style="opacity:0.5">Bloqueado</a></div>`;
         }
 
         const gridR = document.getElementById('grid-refuerzo');
-        for(let i=5; i<=11; i++) {
+        for(let i=8; i<=11; i++) {
             gridR.innerHTML += `<div class="class-card"><div><span class="mono" style="color:var(--boost-accent); font-size:0.8rem">REFUERZO ${i.toString().padStart(2,'0')}</span><h3>Lab ${i}</h3><p>Práctica intensiva.</p></div><a href="#" class="btn-action btn-boost" style="opacity:0.5">Bloqueado</a></div>`;
         }
     </script>
