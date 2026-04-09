@@ -238,7 +238,7 @@
 					<div class="class-card">
                         <div>
                             <span class="mono" style="color:var(--terminal-green); font-size:0.8rem">CLASE 05</span>
-                            <h3>💻 Examen Práctico: Python I</h3>
+                            <h3>💻 Examen práctico: Python I</h3>
                             <p>Evaluación de fundamentos: variables, condicionales y bucles.</p>
                         </div>
                         <a href="javascript:void(0)" class="btn-action btn-main" style="background: var(--terminal-green); color: black;" onclick="loadLesson(5)">Ver contenido</a>
@@ -267,6 +267,14 @@
                         </div>
                         <a href="javascript:void(0)" class="btn-action btn-main" onclick="loadLesson(8)">Ver contenido</a>
                     </div>
+					 <div class="class-card">
+		                <div>
+		                    <span class="mono" style="color:var(--terminal-green); font-size:0.8rem">CLASE 09</span>
+		                    <h3>💻 Examen práctico: Python II</h3>
+		                    <p>Colecciones, funciones y persistencia de datos.</p>
+		                </div>
+		                <a href="javascript:void(0)" class="btn-action btn-main" style="background: var(--terminal-green); color: black;"onclick="loadLesson(9)"">Ver contenido</a>
+            		</div>
                 </div>
             </div>
 
@@ -1001,6 +1009,71 @@
                     </table>
                 </div>
             `,
+			9: `
+                <div class="lesson-header">
+                    <p class="mono" style="color: var(--exam-accent)">> status: final_evaluation_v2.0</p>
+                    <h2>Examen práctico de programación: Python II (Clases 6-8)</h2>
+                    <p><strong>Puntaje máximo:</strong> 20 pts</p>
+                </div>
+
+                <div class="alert-box">
+                    <h3 style="margin-bottom: 10px; color: var(--main-accent)">Instrucciones:</h3>
+                    <ul style="margin-left: 20px; list-style-type: decimal;">
+                        <li>Lee cada enunciado y escribe el código necesario para resolver el problema.</li>
+                        <li>Cuida la indentación y el uso de los <code>:</code> donde corresponda.</li>
+                        <li>Crear una carpeta en el computador con el nombre de los integrantes.</li>
+                        <li><span style="color:var(--terminal-green)">Guardar un solo ducumento .py con todos los ejercicios debidamente identificados y enviarlos a la tarea publicada en Google Classroom.</span></li>
+                        <li>La ruta para guardar el archivo es ir al menú <strong>File > Save and Export Notebook As > Executable Script</strong> (Guardar dentro de la carpeta creada previamente).</li>
+                    </ul>
+                </div>
+
+                <h3 class="section-title">Nivel 1: Colecciones (Listas y tuplas)</h3>
+
+				<div class="exam-exercise">
+					<span class="points-badge">2 pts</span>
+					<div class="timer-badge">⏱ Tiempo sugerido: NO TIME</div>
+					<p><strong>Ejercicio 1:</strong> Si tienes la tupla <span style="color:var(--main-accent)">punto_fijo = (10, 20)</span>, explica qué sucede si intentas hacer <span style="color:var(--main-accent)">punto_fijo[0] = 50</span> y por qué ocurre eso.</p>
+				</div> 
+
+				<div class="exam-exercise">
+					<span class="points-badge">3 pts</span>
+					<div class="timer-badge">⏱ Tiempo sugerido: NO TIME</div>
+					<p><strong>Ejercicio 2:</strong> Tienes la siguiente lista de compras: <span style="color:var(--main-accent)">compras = ["Pan", "Leche", "Huevos", "Cafe"]</span>. Escribe las líneas de código para:</p>
+	                <ul style="margin-left: 30px; margin-top: 10px;">
+	                    <li>• Añadir "Cereal" al final de la lista.</li>
+	                    <li>• Cambiar "Leche" por "Yogurt" usando su índice.</li>
+	                    <li>• Imprimir solo los dos primeros elementos usando slicing.</li>
+	                </ul>
+				</div> 
+        
+
+                <h3 class="section-title">Nivel 2: Diccionarios y funciones</h3>
+
+				<div class="exam-exercise">
+					<span class="points-badge">4 pts</span>
+					<div class="timer-badge">⏱ Tiempo sugerido: NO TIME</div>
+					<p><strong>Ejercicio 3:</strong> Crea un diccionario llamado <span style="color:var(--boost-accent)">mascota</span> que tenga las claves: <span style="color:var(--main-accent)">nombre, especie y edad</span> con sus respectivos valores predeterminados. Luego, escribe una función llamada <span style="color:var(--boost-accent)">cumple_mascota</span> que reciba ese diccionario como parámetro y le sume 1 a la <span style="color:var(--main-accent)">edad</span>. La función debe retornar el diccionario actualizado.</p>
+				</div> 
+
+                <div class="exam-exercise">
+					<span class="points-badge">5 pts</span>
+					<div class="timer-badge">⏱ Tiempo sugerido: NO TIME</div>
+					<p><strong>Ejercicio 4:</strong> Crea una función llamada <span style="color:var(--boost-accent)">area_triangulo</span> que reciba como parámetros la <span style="color:var(--main-accent)">base</span> y la <span style="color:var(--main-accent)">altura</span>. La función debe calcular el área y devolver el resultado. Al final, llama a la función y enviale los valores (argumentos) de la base y la altura introducidos por teclado como <span style="color:var(--terminal-green)">tipo de dato decimal.</span></p>
+				</div> 
+
+
+                <h3 class="section-title">Nivel 3: Persistencia y lógica integrada</h3>
+
+				<div class="exam-exercise">
+					<span class="points-badge">6 pts</span>
+					<div class="timer-badge">⏱ Tiempo sugerido: NO TIME</div>
+					<p><strong>Ejercicio 5:</strong> Escribe un programa que pida al usuario su <span style="color:var(--main-accent">"Nombre de Jugador"</span> y su <span style="color:var(--main-accent">"Puntaje"</span> que deben ser configurados en un diccionario. Estos datos deben guardarse en un archivo llamado <span style="color:var(--boost-accent)">puntajes.txt</span> y mostrando un mensaje de <span style="color:var(--terminal-green)">¡DATOS GUARDADOS!</span>. Posteriormente leer el archivo para mostrar los datos que fueron guardados.</p>
+				</div>         
+                
+                <div class="alert-box" style="background: rgba(57, 255, 20, 0.05); border: 1px solid var(--terminal-green); padding: 15px; margin-top: 15px; border-radius: 6px;">
+                    <strong>Importante:</strong> Usa el modo que permite añadir información sin borrar lo que ya existe en el archivo.
+                </div>
+            `,
             'R1': `
                 <div class="lesson-header">
                     <p class="mono">> status: reading_boost_01</p>
@@ -1452,7 +1525,7 @@ puede_entrar = (edad >= <span style="color: #79c0ff">14</span>) <span style="col
 
         // Generar placeholders para el resto
         const gridP = document.getElementById('grid-principales');
-        for(let i=9; i<=11; i++) {
+        for(let i=10; i<=9; i++) {
             gridP.innerHTML += `<div class="class-card"><div><span class="mono" style="color:var(--text-muted); font-size:0.8rem">CLASE ${i.toString().padStart(2,'0')}</span><h3>Próximamente</h3><p>Contenido en desarrollo.</p></div><a href="#" class="btn-action btn-main" style="opacity:0.5">Bloqueado</a></div>`;
         }
 
